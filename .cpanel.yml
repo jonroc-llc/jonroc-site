@@ -2,7 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/jonrocd26/public_html
-    - export PATH=$PATH:/usr/local/bin:/opt/cpanel/ea-nodejs20/root/usr/bin
-    - npm install --prefix /home/jonrocd26/repositories/jonroc-site
-    - npm run build --prefix /home/jonrocd26/repositories/jonroc-site
-    - /bin/cp -rf /home/jonrocd26/repositories/jonroc-site/dist/. $DEPLOYPATH/
+    - echo "Deployment started" > $DEPLOYPATH/deploy-test.txt

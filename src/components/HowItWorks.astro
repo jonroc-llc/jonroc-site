@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    number: "01",
+    title: "Discovery",
+    body: "We spend time with you and your team to map out where the actual bottlenecks are. Not theory. Real workflows. We want to know what your week looks like, what your people hate doing, and where you're losing time or money. This is a working session, not a sales presentation.",
+  },
+  {
+    number: "02",
+    title: "Installation",
+    body: "We build the agents, connect them to your existing tools, test them, and install them. You don't need to change your whole tech stack. We work with what you've got, or help you make targeted upgrades where it actually matters. Your team gets trained. We don't disappear after go-live.",
+  },
+  {
+    number: "03",
+    title: "Support",
+    body: "Agents are not set-and-forget forever. Your business changes. We tune, adjust, and expand what's running based on what's actually happening. You have a direct line. Not a support ticket system. A person.",
+  },
+];
+---
+<section class="py-24 bg-[#0A0A0A]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4">How It Works</h2>
+    <p class="text-[#9CA3AF] text-lg mb-16 max-w-xl">
+      Three phases. No surprises.
+    </p>
+
+    <div class="relative">
+      <!-- Connector line (desktop) -->
+      <div class="hidden md:block absolute top-10 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent" aria-hidden="true"></div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        {steps.map((step) => (
+          <div class="relative flex flex-col">
+            <!-- Step number badge -->
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 rounded-full bg-[#C9A84C] text-[#0A0A0A] font-bold text-sm flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#C9A84C]/30">
+                {step.number}
+              </div>
+              <div class="h-px flex-1 bg-white/5 md:hidden"></div>
+            </div>
+            <h3 class="text-xl font-bold text-[#F0F0F0] mb-3">
+              Step {step.number}: {step.title}
+            </h3>
+            <p class="text-[#9CA3AF] leading-relaxed">{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

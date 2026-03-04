@@ -1,9 +1,11 @@
 ---
 import '../styles/global.css'
+
 interface Props {
   title: string;
   description?: string;
 }
+
 const { title, description = "Jonroc — AI Agent Installation for Growing Businesses" } = Astro.props;
 ---
 <!doctype html>
@@ -14,8 +16,22 @@ const { title, description = "Jonroc — AI Agent Installation for Growing Busin
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Jonroc</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Jonroc`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jonroc" />
   </head>
-  <body class="min-h-screen bg-[#0A0A0A] text-gray-100 font-sans antialiased">
+  <body class="min-h-screen bg-[#0A0A0A] text-[#F0F0F0] antialiased">
+    <!-- Skip to main content for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[#C9A84C] focus:text-[#0A0A0A] focus:font-semibold focus:px-4 focus:py-2 focus:rounded-full focus:outline-none"
+    >
+      Skip to main content
+    </a>
+
     <slot />
   </body>
 </html>

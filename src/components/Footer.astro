@@ -1,0 +1,33 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="border-t border-white/5 bg-[#0A0A0A] py-10">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <span class="text-[#C9A84C] font-bold text-lg">Jonroc</span>
+      <p class="text-[#9CA3AF] text-sm mt-1">&copy; {year} Jonroc LLC. All rights reserved.</p>
+    </div>
+    <nav aria-label="Social links" class="flex items-center gap-6">
+      <a
+        href="#"
+        class="text-[#9CA3AF] hover:text-[#C9A84C] text-sm transition-colors duration-200 focus:outline-none focus:underline"
+        aria-label="LinkedIn (coming soon)"
+      >
+        LinkedIn
+      </a>
+      <a
+        href="#"
+        class="text-[#9CA3AF] hover:text-[#C9A84C] text-sm transition-colors duration-200 focus:outline-none focus:underline"
+        aria-label="Twitter / X (coming soon)"
+      >
+        Twitter / X
+      </a>
+      <a
+        href="mailto:hello@jonroc.dev"
+        class="text-[#9CA3AF] hover:text-[#C9A84C] text-sm transition-colors duration-200 focus:outline-none focus:underline"
+      >
+        hello@jonroc.dev
+      </a>
+    </nav>
+  </div>
+</footer>

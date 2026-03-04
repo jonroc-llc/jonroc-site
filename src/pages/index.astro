@@ -1,13 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import WhatWeDo from '../components/WhatWeDo.astro';
+import WhoItsFor from '../components/WhoItsFor.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import WhyJonroc from '../components/WhyJonroc.astro';
+import FAQ from '../components/FAQ.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
 ---
-<Layout title="AI Agent Installation for Growing Businesses">
-  <main class="flex flex-col items-center justify-center min-h-screen text-center px-6">
-    <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-      <span class="text-[#C9A84C]">Jonroc</span>
-    </h1>
-    <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mb-10">
-      AI agent installation for growing businesses. Coming soon.
-    </p>
+<Layout
+  title="AI Agent Installation for Growing Businesses"
+  description="Jonroc installs AI agents that handle the repetitive work your team hates doing. Custom automation for construction companies and event businesses. Book a free discovery call."
+>
+  <Header />
+
+  <main id="main-content">
+    <!-- 1. Hero -->
+    <Hero />
+
+    <!-- 2. The Problem -->
+    <Problem />
+
+    <!-- 3. What We Do -->
+    <WhatWeDo />
+
+    <!-- 4. Who It's For -->
+    <WhoItsFor />
+
+    <!-- 5. How It Works -->
+    <HowItWorks />
+
+    <!-- 6. Why Jonroc -->
+    <WhyJonroc />
+
+    <!-- 7. FAQ -->
+    <FAQ />
+
+    <!-- 8. Final CTA -->
+    <FinalCTA />
   </main>
+
+  <Footer />
 </Layout>

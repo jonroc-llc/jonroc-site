@@ -1,0 +1,52 @@
+---
+const faqs = [
+  {
+    question: "What is an AI agent?",
+    answer: "It's software that can take actions on its own based on a set of rules and triggers. Think of it as a very focused digital employee who does one thing, does it reliably, and never forgets a step. It connects to your tools, reads information, makes decisions within boundaries you set, and takes action. Responds to emails, generates documents, updates records, moves data. The specifics depend on what you need it to do.",
+  },
+  {
+    question: "How long does installation take?",
+    answer: "Depends on what we're building. A focused single-function agent can be installed in a week or two. A more complex workflow involving multiple systems usually takes three to six weeks. We'll give you a realistic timeline during the discovery phase, not an optimistic one.",
+  },
+  {
+    question: "What does it cost?",
+    answer: "We don't post a pricing page because no two installs are the same. A quote without knowing your setup would be a guess. Book a call and we'll give you a straight number based on what you actually need. No pressure to move forward, no long sales process.",
+  },
+  {
+    question: "Will it work with my existing tools?",
+    answer: "Probably. We've connected agents to QuickBooks, Jobber, HubSpot, Google Workspace, Procore, Salesforce, and a lot of other common platforms. If you're running something unusual, we'll tell you upfront whether it's compatible. We'd rather say 'that won't work' early than build something that's a pain to maintain.",
+  },
+  {
+    question: "Do I need technical knowledge to use it?",
+    answer: "No. Once installed, agents run in the background. You interact with the outputs, not the machinery. If something needs your attention, it flags you through whatever tool you're already using. Your team doesn't need to learn anything new to benefit from it.",
+  },
+  {
+    question: "What if I'm not happy?",
+    answer: "We're a small operation with a reputation to maintain. If something we built isn't working the way we said it would, we fix it. If after working together you genuinely feel like you didn't get value, we'll have an honest conversation about it. We're not going to hide behind a contract. This business runs on referrals and we know it.",
+  },
+];
+---
+<section class="py-24 bg-[#0A0A0A]">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4">FAQ</h2>
+    <p class="text-[#9CA3AF] text-lg mb-14">Straight answers to the questions we hear most.</p>
+
+    <div class="space-y-3">
+      {faqs.map((faq) => (
+        <details class="group bg-[#111111] border border-white/5 rounded-xl overflow-hidden hover:border-[#C9A84C]/20 transition-colors duration-300">
+          <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C] focus-visible:ring-inset">
+            <span class="text-[#F0F0F0] font-semibold text-base pr-2">{faq.question}</span>
+            <span class="text-[#C9A84C] flex-shrink-0 transition-transform duration-200 group-open:rotate-45" aria-hidden="true">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p class="text-[#9CA3AF] leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

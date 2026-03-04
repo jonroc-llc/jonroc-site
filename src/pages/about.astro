@@ -4,14 +4,14 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 ---
 <Layout
-  title="About Ben"
-  description="Meet Benjamin, founder of Jonroc. 15 years of real business operations — from running 35+ employees in an event rental company to building AI automation for growing businesses."
+  title="About Benjamin"
+  description="Meet Benjamin, founder of Jonroc. 15 years of real business operations, from running 35+ employees in an event rental company to building AI automation for growing businesses."
 >
   <Header />
 
   <main id="main-content">
 
-    <!-- ─── Hero ─────────────────────────────────────────────── -->
+    <!-- Hero -->
     <section class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-32 pb-20 bg-[#0A0A0A]">
       <!-- Radial glow -->
       <div
@@ -23,33 +23,34 @@ import Footer from '../components/Footer.astro';
       <div class="relative max-w-5xl mx-auto w-full">
         <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
 
-          <!-- Photo placeholder -->
+          <!-- Photo -->
           <div class="flex-shrink-0">
-            <div
-              class="w-[240px] h-[320px] md:w-[300px] md:h-[400px] rounded-2xl border border-[#C9A84C]/20 bg-[#111111] flex flex-col items-center justify-center gap-4 shadow-xl shadow-black/40"
-              role="img"
-              aria-label="Photo placeholder — Ben's photo coming soon"
-            >
-              <!-- Person icon -->
-              <div class="w-20 h-20 rounded-full bg-[#1A1A1A] border border-[#C9A84C]/30 flex items-center justify-center">
-                <svg class="w-10 h-10 text-[#C9A84C]/50" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
-                </svg>
-              </div>
-              <p class="text-[#9CA3AF]/60 text-sm font-medium tracking-wide">Photo coming soon</p>
+            <div class="relative">
+              <!-- Gold glow -->
+              <div
+                class="absolute -inset-3 rounded-3xl opacity-25 blur-2xl pointer-events-none"
+                style="background: #C9A84C;"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="/images/ben-portrait.jpg"
+                alt="Benjamin, founder of Jonroc"
+                class="relative w-[240px] h-[320px] md:w-[300px] md:h-[400px] rounded-2xl border-2 border-[#C9A84C]/40 shadow-2xl shadow-black/60 object-cover"
+                loading="eager"
+              />
             </div>
           </div>
 
           <!-- Headline copy -->
           <div class="text-center md:text-left">
             <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
-              Founder & Operator
+              Founder &amp; Operator
             </p>
             <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F0F0F0] leading-tight mb-5">
-              Meet <span class="text-[#C9A84C]">Ben</span>
+              Meet <span class="text-[#C9A84C]">Benjamin</span>
             </h1>
             <p class="text-lg md:text-xl text-[#9CA3AF] max-w-xl leading-relaxed">
-              15 years of hands-on business operations — from managing 35 employees in the field to installing AI agents that handle the work teams shouldn't be doing manually.
+              15 years of hands-on business operations, from managing 35 employees in the field to installing AI agents that handle the work teams shouldn't be doing manually.
             </p>
           </div>
 
@@ -57,7 +58,7 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- ─── The Story ─────────────────────────────────────────── -->
+    <!-- The Story -->
     <section class="py-24 bg-[#0A0A0A]">
       <!-- Section divider -->
       <div class="max-w-6xl mx-auto px-6">
@@ -69,18 +70,18 @@ import Footer from '../components/Footer.astro';
           The Story
         </p>
         <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-12 leading-tight">
-          From Washing Dishes to<br class="hidden sm:block" />
+          From Sweeping Floors to<br class="hidden sm:block" />
           <span class="text-[#C9A84C]">Running the Operation</span>
         </h2>
 
         <!-- Story block 1 -->
         <div class="mb-12">
-          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">The Beginning</h3>
+          <h3 class="text-sm font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase">The Beginning</h3>
           <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
-            Benjamin started his professional career on the ground floor of his family's event rental business. Literally. He started by washing dishes.
+            Benjamin started his professional career on the ground floor of his family's event rental business. Literally, he started by sweeping warehouse floors, then moved up to dishwashing, and progressed through every position in the company until he arrived at General Manager.
           </p>
           <p class="text-[#9CA3AF] leading-relaxed text-lg">
-            Over 15 years, he worked his way up to General Manager, running daily operations for a company with over 35 employees. He learned every part of the business: scheduling crews, managing inventory, handling customers, keeping the books straight, and dealing with the thousand small fires that come with running a service business.
+            Over 15 years, he ran daily operations for a company with over 35 employees. He learned every part of the business: scheduling crews, managing inventory, handling customers, keeping the books straight, and dealing with the thousand small fires that come with running a service business.
           </p>
         </div>
 
@@ -89,12 +90,12 @@ import Footer from '../components/Footer.astro';
 
         <!-- Story block 2 -->
         <div class="mb-12">
-          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">A Problem Worth Solving</h3>
+          <h3 class="text-sm font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase">A Problem Worth Solving</h3>
           <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
-            During that time, Ben discovered that a local web design company was overcharging his family's business for website work and online marketing. Young and stubborn enough to do something about it, he taught himself web development and took over the company's digital presence. That side project became a passion.
+            During that time, Benjamin discovered that a local web design company was overcharging his family's business for website work and online marketing. Young and stubborn enough to do something about it, he taught himself web development and took over the company's digital presence. That side project became a passion.
           </p>
           <p class="text-[#9CA3AF] leading-relaxed text-lg">
-            Two years later, with his family's blessing, Ben stepped away from the rental business to launch Jonroc full-time. Since 2011, Jonroc has served clients across the country — building websites and running marketing campaigns for businesses in construction, events, professional services, and more.
+            Two years later, with his family's blessing, Benjamin stepped away from the rental business to launch Jonroc full-time. Since 2011, Jonroc has served clients across the country, building websites and running marketing campaigns for businesses in construction, events, professional services, and more.
           </p>
         </div>
 
@@ -103,12 +104,12 @@ import Footer from '../components/Footer.astro';
 
         <!-- Story block 3 -->
         <div class="mb-12">
-          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">Seeing the Pattern</h3>
+          <h3 class="text-sm font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase">Seeing the Pattern</h3>
           <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
-            But the industry changed. Every business now runs on a stack of software tools that were supposed to make things easier — but mostly just added more screens to check. Ben saw the same pattern over and over: companies paying for a dozen subscriptions, teams copy-pasting data between platforms, and owners still doing manual work that should have been automated years ago.
+            But the industry changed. Every business now runs on a stack of software tools that were supposed to make things easier, but mostly just added more screens to check. Benjamin saw the same pattern over and over: companies paying for a dozen subscriptions, teams copy-pasting data between platforms, and owners still doing manual work that should have been automated years ago.
           </p>
           <p class="text-[#9CA3AF] leading-relaxed text-lg">
-            The 15 years Ben spent in both the rental industry and digital services gave him something most AI consultants don't have: a deep understanding of how real businesses actually operate, from the warehouse floor to the back office. He's not selling technology for technology's sake. He's solving the same problems he used to deal with himself — just with better tools.
+            The 15 years Benjamin spent in both the rental industry and digital services gave him something most AI consultants don't have: a deep understanding of how real businesses actually operate, from the warehouse floor to the back office. He's not selling technology for technology's sake. He's solving the same problems he used to deal with himself, just with better tools.
           </p>
         </div>
 
@@ -117,16 +118,16 @@ import Footer from '../components/Footer.astro';
 
         <!-- Story block 4 -->
         <div>
-          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">Where Jonroc Is Today</h3>
+          <h3 class="text-sm font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase">Where Jonroc Is Today</h3>
           <p class="text-[#9CA3AF] leading-relaxed text-lg">
-            Today, Jonroc works primarily with construction companies and event businesses — two industries where complex logistics and high-volume operations make AI automation especially impactful. Ben's approach is straightforward: show up, understand the operation, install what works, and stay around to make sure it keeps working.
+            Today, Jonroc works primarily with construction companies and event businesses, two industries where complex logistics and high-volume operations make AI automation especially impactful. Benjamin's approach is straightforward: show up, understand the operation, install what works, and stay around to make sure it keeps working.
           </p>
         </div>
 
       </div>
     </section>
 
-    <!-- ─── Why AI Agents ─────────────────────────────────────── -->
+    <!-- Why AI Agents -->
     <section class="py-24 bg-[#111111] relative overflow-hidden">
       <!-- Background glow -->
       <div
@@ -145,13 +146,13 @@ import Footer from '../components/Footer.astro';
           Why <span class="text-[#C9A84C]">AI Agents?</span>
         </h2>
         <p class="text-[#9CA3AF] text-lg leading-relaxed mb-8">
-          Ben didn't pivot to AI because it was trendy. He pivoted because he kept seeing the same exhaustion in every business he worked with — capable teams buried in repetitive, low-value work that no software subscription was actually fixing.
+          Benjamin didn't pivot to AI because it was trendy. He pivoted because he kept seeing the same exhaustion in every business he worked with, capable teams buried in repetitive, low-value work that no software subscription was actually fixing.
         </p>
         <p class="text-[#9CA3AF] text-lg leading-relaxed mb-8">
           Instead of building another website or running another ad campaign, Jonroc now installs purpose-built AI agents directly into business operations. These agents handle scheduling, document processing, customer communication, inventory tracking, and the other repetitive tasks that eat up a team's day.
         </p>
         <p class="text-[#9CA3AF] text-lg leading-relaxed mb-14">
-          It's not technology for technology's sake. It's the same problem Ben's been solving since he was a 20-something running a rental crew — just with tools that didn't exist back then.
+          It's not technology for technology's sake. It's the same problem Benjamin's been solving since he was a 20-something running a rental crew, just with tools that didn't exist back then.
         </p>
 
         <!-- Three pillars -->
@@ -163,7 +164,7 @@ import Footer from '../components/Footer.astro';
               </svg>
             </div>
             <h3 class="text-[#F0F0F0] font-semibold mb-2">Real Experience</h3>
-            <p class="text-[#9CA3AF] text-sm leading-relaxed">15+ years operating and managing real businesses — not just consulting from the sideline.</p>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">15+ years operating and managing real businesses, not just consulting from the sideline.</p>
           </div>
           <div class="bg-[#0A0A0A] rounded-xl border border-white/5 p-6">
             <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center mb-4">
@@ -181,14 +182,14 @@ import Footer from '../components/Footer.astro';
               </svg>
             </div>
             <h3 class="text-[#F0F0F0] font-semibold mb-2">We Stay Around</h3>
-            <p class="text-[#9CA3AF] text-sm leading-relaxed">Installation isn't the end. Ben stays engaged to make sure the agents keep working as your business grows.</p>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">Installation isn't the end. Benjamin stays engaged to make sure the agents keep working as your business grows.</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ─── CTA ───────────────────────────────────────────────── -->
+    <!-- CTA -->
     <section class="py-28 bg-[#0A0A0A] relative overflow-hidden">
       <div
         class="absolute inset-0 pointer-events-none"

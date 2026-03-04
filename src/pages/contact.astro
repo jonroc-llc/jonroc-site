@@ -5,13 +5,13 @@ import Footer from '../components/Footer.astro';
 ---
 <Layout
   title="Contact"
-  description="Book a free 15-minute discovery call with Ben at Jonroc. Let's talk about your business operations and where AI agents can make the biggest difference."
+  description="Book a free 15-minute discovery call with Benjamin at Jonroc. Let's talk about your business operations and where AI agents can make the biggest difference."
 >
   <Header />
 
   <main id="main-content">
 
-    <!-- ─── Hero ─────────────────────────────────────────────── -->
+    <!-- Hero -->
     <section class="relative flex flex-col items-center justify-center px-6 pt-36 pb-20 bg-[#0A0A0A]">
       <!-- Radial glow -->
       <div
@@ -29,12 +29,12 @@ import Footer from '../components/Footer.astro';
           <span class="text-[#C9A84C]">Your Business</span>
         </h1>
         <p class="text-lg md:text-xl text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
-          Pick a time that works for you. It's a straight conversation — no pressure, no sales script. Just an honest look at what's slowing your team down.
+          Pick a time that works for you. It's a straight conversation, no pressure, no sales script. Just an honest look at what's slowing your team down.
         </p>
       </div>
     </section>
 
-    <!-- ─── Booking Embed ─────────────────────────────────────── -->
+    <!-- Booking Embed -->
     <section class="py-16 bg-[#0A0A0A]">
       <div class="max-w-4xl mx-auto px-6">
 
@@ -43,7 +43,7 @@ import Footer from '../components/Footer.astro';
           <!-- Card header -->
           <div class="px-8 py-6 border-b border-white/5 flex items-center gap-3">
             <div class="w-2 h-2 rounded-full bg-[#C9A84C]" aria-hidden="true"></div>
-            <p class="text-[#F0F0F0] font-semibold">Book a 15-Minute Discovery Call with Ben</p>
+            <p class="text-[#F0F0F0] font-semibold">Book a 15-Minute Discovery Call with Benjamin</p>
           </div>
 
           <!-- GHL Booking iframe -->
@@ -53,7 +53,7 @@ import Footer from '../components/Footer.astro';
               style="width:100%;border:none;overflow:hidden;min-height:700px;"
               scrolling="no"
               id="ghl-booking"
-              title="Book a discovery call with Ben"
+              title="Book a discovery call with Benjamin"
               loading="lazy"
             ></iframe>
           </div>
@@ -62,7 +62,97 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- ─── What to Expect ────────────────────────────────────── -->
+    <!-- Contact Form -->
+    <section class="py-24 bg-[#0A0A0A]">
+      <div class="max-w-2xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+            Send a Message
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] leading-tight">
+            Prefer to <span class="text-[#C9A84C]">Write It Out?</span>
+          </h2>
+          <p class="text-[#9CA3AF] mt-4 leading-relaxed">Fill out the form below and Benjamin will get back to you shortly.</p>
+        </div>
+
+        <form
+          action="https://hooks.zapier.com/placeholder"
+          method="POST"
+          class="bg-[#111111] border border-white/5 rounded-2xl p-8 md:p-10 space-y-6 shadow-2xl shadow-black/40"
+        >
+          <!-- Name -->
+          <div>
+            <label for="contact-name" class="block text-[#F0F0F0] text-sm font-semibold mb-2">
+              Name <span class="text-[#C9A84C]" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              placeholder="Your full name"
+              class="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-[#F0F0F0] placeholder-[#9CA3AF]/50 focus:outline-none focus:border-[#C9A84C]/60 focus:ring-1 focus:ring-[#C9A84C]/40 transition-colors duration-200"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="contact-email" class="block text-[#F0F0F0] text-sm font-semibold mb-2">
+              Email <span class="text-[#C9A84C]" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              placeholder="you@yourcompany.com"
+              class="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-[#F0F0F0] placeholder-[#9CA3AF]/50 focus:outline-none focus:border-[#C9A84C]/60 focus:ring-1 focus:ring-[#C9A84C]/40 transition-colors duration-200"
+            />
+          </div>
+
+          <!-- Phone (optional) -->
+          <div>
+            <label for="contact-phone" class="block text-[#F0F0F0] text-sm font-semibold mb-2">
+              Phone <span class="text-[#9CA3AF] font-normal text-xs">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              placeholder="(555) 000-0000"
+              class="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-[#F0F0F0] placeholder-[#9CA3AF]/50 focus:outline-none focus:border-[#C9A84C]/60 focus:ring-1 focus:ring-[#C9A84C]/40 transition-colors duration-200"
+            />
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label for="contact-message" class="block text-[#F0F0F0] text-sm font-semibold mb-2">
+              Message <span class="text-[#C9A84C]" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              required
+              rows="5"
+              placeholder="Tell us a bit about your business and what you're trying to fix."
+              class="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 py-3 text-[#F0F0F0] placeholder-[#9CA3AF]/50 focus:outline-none focus:border-[#C9A84C]/60 focus:ring-1 focus:ring-[#C9A84C]/40 transition-colors duration-200 resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button
+              type="submit"
+              class="w-full bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-8 py-4 rounded-full hover:bg-[#E2C070] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#111111] transition-colors duration-200 shadow-lg shadow-[#C9A84C]/20"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- What to Expect -->
     <section class="py-24 bg-[#111111] relative overflow-hidden">
       <!-- Top border accent -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" aria-hidden="true"></div>
@@ -81,7 +171,6 @@ import Footer from '../components/Footer.astro';
 
           <!-- Step 1 -->
           <div class="relative">
-            <!-- Step number -->
             <div class="w-12 h-12 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mb-6">
               <span class="text-[#C9A84C] font-bold text-lg">1</span>
             </div>
@@ -101,7 +190,7 @@ import Footer from '../components/Footer.astro';
             <div class="hidden md:block absolute top-6 left-12 right-0 h-px bg-gradient-to-r from-[#C9A84C]/20 to-transparent" aria-hidden="true"></div>
             <h3 class="text-[#F0F0F0] font-semibold text-xl mb-3">We Dig Into Your Operation</h3>
             <p class="text-[#9CA3AF] leading-relaxed">
-              Ben will ask real questions about how your team works — what's repetitive, what's expensive, and where the bottlenecks are.
+              Benjamin will ask real questions about how your team works. What's repetitive, what's expensive, and where the bottlenecks are.
             </p>
           </div>
 
@@ -112,7 +201,7 @@ import Footer from '../components/Footer.astro';
             </div>
             <h3 class="text-[#F0F0F0] font-semibold text-xl mb-3">You Get a Custom Proposal</h3>
             <p class="text-[#9CA3AF] leading-relaxed">
-              If there's a fit, Ben will put together a proposal specific to your operation — what to automate, how it works, and what it costs.
+              If there's a fit, Benjamin will put together a proposal specific to your operation: what to automate, how it works, and what it costs.
             </p>
           </div>
 
@@ -120,35 +209,19 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
-    <!-- ─── Direct Contact ────────────────────────────────────── -->
+    <!-- Location info only (no exposed email) -->
     <section class="py-24 bg-[#0A0A0A]">
       <div class="max-w-5xl mx-auto px-6">
         <div class="text-center mb-14">
           <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
-            Direct Contact
+            Based In
           </p>
           <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] leading-tight">
-            Prefer to <span class="text-[#C9A84C]">Reach Out Directly?</span>
+            Richmond, VA. <span class="text-[#C9A84C]">Serving Nationwide.</span>
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-
-          <!-- Email -->
-          <a
-            href="mailto:ben@jonroc.com"
-            class="group bg-[#111111] rounded-xl border border-white/5 p-7 flex flex-col gap-4 hover:border-[#C9A84C]/30 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#0A0A0A]"
-          >
-            <div class="w-11 h-11 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center group-hover:border-[#C9A84C]/40 transition-colors duration-200">
-              <svg class="w-5 h-5 text-[#C9A84C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-              </svg>
-            </div>
-            <div>
-              <p class="text-[#9CA3AF] text-xs font-semibold tracking-widest uppercase mb-1">Email</p>
-              <p class="text-[#F0F0F0] font-medium group-hover:text-[#C9A84C] transition-colors duration-200">ben@jonroc.com</p>
-            </div>
-          </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
 
           <!-- Phone -->
           <div class="bg-[#111111] rounded-xl border border-white/5 p-7 flex flex-col gap-4">

@@ -9,6 +9,7 @@ const portfolioItems = [
     domain: "carwreckcowboy.com",
     url: "https://carwreckcowboy.com",
     category: "B2C Construction",
+    screenshot: "/images/portfolio/car-wreck-cowboy.jpg",
     description1: "Lead generation website for a construction and contractor services company.",
     description2: "Built to convert local homeowners searching for contractors into qualified leads.",
   },
@@ -17,6 +18,7 @@ const portfolioItems = [
     domain: "calwestrentals.com",
     url: "https://calwestrentals.com",
     category: "Tool & Equipment Rental",
+    screenshot: "/images/portfolio/calwest-rentals.jpg",
     description1: "Full website and online marketing for a California-based tool and equipment rental company.",
     description2: "Built to drive online bookings and local search visibility.",
   },
@@ -25,6 +27,7 @@ const portfolioItems = [
     domain: "siouxfallscommercial.com",
     url: "https://siouxfallscommercial.com",
     category: "B2B Construction",
+    screenshot: "/images/portfolio/sioux-falls-commercial.jpg",
     description1: "Professional web presence for a commercial construction firm targeting developers, architects, and project managers in the Sioux Falls market.",
     description2: "Built to establish authority and generate qualified B2B inquiries.",
   },
@@ -33,6 +36,7 @@ const portfolioItems = [
     domain: "rentalinnovationz.com",
     url: "https://rentalinnovationz.com",
     category: "Party & Event Rental",
+    screenshot: "/images/portfolio/rental-innovationz.jpg",
     description1: "Modern rental company website with online quote functionality and inventory showcase.",
     description2: "Built to compete in a crowded local rental market.",
   },
@@ -41,6 +45,7 @@ const portfolioItems = [
     domain: "rentalworld.com",
     url: "https://rentalworld.com",
     category: "Equipment Rental",
+    screenshot: "/images/portfolio/rental-world.jpg",
     description1: "Website redesign and SEO for an established equipment rental company.",
     description2: "Focused on improving search visibility and streamlining the customer inquiry process.",
   },
@@ -48,6 +53,7 @@ const portfolioItems = [
     name: "TLC Event Rentals",
     domain: "tlceventrentals.com",
     url: "https://tlceventrentals.com",
+    screenshot: "/images/portfolio/tlc-event-rentals.jpg",
     category: "Event Rental",
     description1: "Event rental company website with a focus on weddings and corporate events.",
     description2: "Built to showcase inventory and convert browsers into booked clients.",
@@ -89,17 +95,13 @@ const portfolioItems = [
           {portfolioItems.map((item) => (
             <article class="bg-[#1A1A1A] border border-white/5 rounded-2xl overflow-hidden hover:border-[#C9A84C]/20 transition-colors duration-300 flex flex-col">
 
-              <!-- Screenshot Placeholder -->
-              <div
-                data-screenshot="true"
-                class="relative flex items-center justify-center"
-                style="width: 100%; height: 250px; background: linear-gradient(135deg, #1a1a1a 0%, #222014 50%, #1a1a1a 100%); border-bottom: 1px solid rgba(201,168,76,0.3);"
-                aria-label={`Screenshot placeholder for ${item.domain}`}
-              >
-                <div class="text-center px-4">
-                  <p class="text-[#C9A84C]/60 text-xs font-semibold tracking-widest uppercase mb-2">Preview</p>
-                  <p class="text-[#C9A84C] text-sm font-mono font-medium">{item.domain}</p>
-                </div>
+              <!-- Screenshot -->
+              <div class="relative overflow-hidden" style="height: 250px; border-bottom: 1px solid rgba(201,168,76,0.2);">
+                <img
+                  src={item.screenshot}
+                  alt={`Screenshot of ${item.name} website`}
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
               </div>
 
               <!-- Card Content -->

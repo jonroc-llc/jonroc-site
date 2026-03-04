@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout title="Blog" description="Insights on AI agents, online marketing, and running a smarter business.">
+  <Header />
+  <main id="main-content" class="pt-24 pb-20 min-h-screen bg-[#0A0A0A]">
+
+    <!-- Hero -->
+    <section class="max-w-6xl mx-auto px-6 py-16 text-center">
+      <p class="text-[#C9A84C] text-sm font-semibold uppercase tracking-widest mb-4">From the desk of Jonroc</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-[#F0F0F0] mb-4">
+        The <span class="text-[#C9A84C]">Jonroc</span> Blog
+      </h1>
+      <p class="text-[#9CA3AF] text-lg max-w-2xl mx-auto">
+        Insights on AI agents, online marketing, and running a smarter business.
+      </p>
+    </section>
+
+    <!-- Post Grid -->
+    <section class="max-w-6xl mx-auto px-6 pb-16">
+      {posts.length === 0 ? (
+        <p class="text-center text-[#9CA3AF]">No posts yet. Check back soon.</p>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {posts.map((post) => (
+            <article class="flex flex-col bg-[#111111] border border-white/5 rounded-2xl overflow-hidden hover:border-[#C9A84C]/30 transition-colors duration-300">
+              <div class="flex flex-col flex-1 p-8">
+                <!-- Tags -->
+                {post.data.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    {post.data.tags.slice(0, 3).map((tag: string) => (
+                      <span class="text-xs font-medium text-[#C9A84C] bg-[#C9A84C]/10 px-2.5 py-1 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                <!-- Title -->
+                <h2 class="text-xl font-bold text-[#F0F0F0] mb-3 leading-snug">
+                  {post.data.title}
+                </h2>
+
+                <!-- Description -->
+                <p class="text-[#9CA3AF] text-sm leading-relaxed mb-6 flex-1">
+                  {post.data.description}
+                </p>
+
+                <!-- Meta + Link -->
+                <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                  <div class="flex flex-col gap-0.5">
+                    <span class="text-xs text-[#F0F0F0] font-medium">{post.data.author}</span>
+                    <time class="text-xs text-[#9CA3AF]" datetime={post.data.date}>
+                      {formatDate(post.data.date)}
+                    </time>
+                  </div>
+                  <a
+                    href={`/blog/${post.slug}`}
+                    class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A84C] hover:text-[#E2C070] transition-colors duration-200"
+                    aria-label={`Read ${post.data.title}`}
+                  >
+                    Read More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </section>
+
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const portfolioItems = [
+  {
+    name: "Car Wreck Cowboy",
+    domain: "carwreckcowboy.com",
+    url: "https://carwreckcowboy.com",
+    category: "B2C Construction",
+    description1: "Lead generation website for a construction and contractor services company.",
+    description2: "Built to convert local homeowners searching for contractors into qualified leads.",
+  },
+  {
+    name: "Cal-West Rentals",
+    domain: "calwestrentals.com",
+    url: "https://calwestrentals.com",
+    category: "Tool & Equipment Rental",
+    description1: "Full website and online marketing for a California-based tool and equipment rental company.",
+    description2: "Built to drive online bookings and local search visibility.",
+  },
+  {
+    name: "Sioux Falls Commercial",
+    domain: "siouxfallscommercial.com",
+    url: "https://siouxfallscommercial.com",
+    category: "B2B Construction",
+    description1: "Professional web presence for a commercial construction firm targeting developers, architects, and project managers in the Sioux Falls market.",
+    description2: "Built to establish authority and generate qualified B2B inquiries.",
+  },
+  {
+    name: "Rental Innovationz",
+    domain: "rentalinnovationz.com",
+    url: "https://rentalinnovationz.com",
+    category: "Party & Event Rental",
+    description1: "Modern rental company website with online quote functionality and inventory showcase.",
+    description2: "Built to compete in a crowded local rental market.",
+  },
+  {
+    name: "Rental World",
+    domain: "rentalworld.com",
+    url: "https://rentalworld.com",
+    category: "Equipment Rental",
+    description1: "Website redesign and SEO for an established equipment rental company.",
+    description2: "Focused on improving search visibility and streamlining the customer inquiry process.",
+  },
+  {
+    name: "TLC Event Rentals",
+    domain: "tlceventrentals.com",
+    url: "https://tlceventrentals.com",
+    category: "Event Rental",
+    description1: "Event rental company website with a focus on weddings and corporate events.",
+    description2: "Built to showcase inventory and convert browsers into booked clients.",
+  },
+];
+---
+<Layout
+  title="Portfolio"
+  description="Work we've done. Six client websites built for construction companies, rental businesses, and event companies across the country."
+>
+  <Header />
+
+  <main id="main-content">
+
+    <!-- Intro Section -->
+    <section class="relative pt-36 pb-16 px-6 bg-[#0A0A0A]">
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(201,168,76,0.06) 0%, transparent 70%);"
+      ></div>
+      <div class="relative max-w-6xl mx-auto">
+        <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+          Our Work
+        </p>
+        <h1 class="text-4xl md:text-5xl font-bold text-[#F0F0F0] mb-5 leading-tight">
+          Work We've Done
+        </h1>
+        <p class="text-[#9CA3AF] text-lg max-w-2xl leading-relaxed">
+          A selection of websites and online marketing projects built for construction companies, rental businesses, and event companies. Real clients, real results.
+        </p>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="py-16 pb-28 px-6 bg-[#0A0A0A]">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {portfolioItems.map((item) => (
+            <article class="bg-[#1A1A1A] border border-white/5 rounded-2xl overflow-hidden hover:border-[#C9A84C]/20 transition-colors duration-300 flex flex-col">
+
+              <!-- Screenshot Placeholder -->
+              <div
+                data-screenshot="true"
+                class="relative flex items-center justify-center"
+                style="width: 100%; height: 250px; background: linear-gradient(135deg, #1a1a1a 0%, #222014 50%, #1a1a1a 100%); border-bottom: 1px solid rgba(201,168,76,0.3);"
+                aria-label={`Screenshot placeholder for ${item.domain}`}
+              >
+                <div class="text-center px-4">
+                  <p class="text-[#C9A84C]/60 text-xs font-semibold tracking-widest uppercase mb-2">Preview</p>
+                  <p class="text-[#C9A84C] text-sm font-mono font-medium">{item.domain}</p>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="p-7 flex flex-col flex-1">
+                <div class="flex items-start justify-between gap-3 mb-4">
+                  <h2 class="text-xl font-bold text-[#F0F0F0] leading-tight">{item.name}</h2>
+                  <span class="flex-shrink-0 text-xs font-semibold text-[#C9A84C] border border-[#C9A84C]/30 rounded-full px-3 py-1 bg-[#C9A84C]/5 whitespace-nowrap">
+                    {item.category}
+                  </span>
+                </div>
+
+                <p class="text-[#9CA3AF] text-sm leading-relaxed mb-1">{item.description1}</p>
+                <p class="text-[#9CA3AF] text-sm leading-relaxed mb-6">{item.description2}</p>
+
+                <div class="mt-auto">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block border border-[#C9A84C]/50 text-[#C9A84C] font-semibold text-sm px-5 py-2.5 rounded-full hover:bg-[#C9A84C] hover:text-[#0A0A0A] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#1A1A1A] transition-all duration-200"
+                  >
+                    Visit Site
+                  </a>
+                </div>
+              </div>
+
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28 bg-[#111111] relative overflow-hidden">
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);"
+      ></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" aria-hidden="true"></div>
+
+      <div class="relative max-w-2xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] leading-tight mb-6">
+          Want Results Like These<br class="hidden sm:block" />
+          <span class="text-[#C9A84C]">For Your Business?</span>
+        </h2>
+        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-10">
+          One conversation. No pitch deck. Just an honest look at your operation and what we can build for you.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-10 py-5 rounded-full hover:bg-[#E2C070] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#111111] transition-colors duration-200 shadow-xl shadow-[#C9A84C]/20"
+        >
+          Book a Discovery Call
+        </a>
+        <p class="mt-5 text-[#9CA3AF]/50 text-sm">No commitment. No pressure.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

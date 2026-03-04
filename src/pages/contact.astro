@@ -34,9 +34,43 @@ import Footer from '../components/Footer.astro';
       </div>
     </section>
 
+    <!-- Quick Nav Buttons -->
+    <section class="py-10 bg-[#0A0A0A]">
+      <div class="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        <!-- Book a Meeting -->
+        <a
+          href="#booking"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#C9A84C] text-[#0A0A0A] font-bold text-base hover:bg-[#E2C070] transition-colors duration-200 shadow-lg shadow-[#C9A84C]/20 w-full sm:w-auto text-center"
+        >
+          Book a Meeting
+        </a>
+
+        <!-- Contact Us -->
+        <a
+          href="#contact-form"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[#C9A84C] text-[#C9A84C] font-bold text-base bg-transparent hover:bg-[#C9A84C]/10 transition-colors duration-200 w-full sm:w-auto text-center"
+        >
+          Contact Us
+        </a>
+
+        <!-- Phone -->
+        <a
+          href="tel:+18022143818"
+          class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full border border-[#C9A84C] text-[#C9A84C] font-bold text-base bg-transparent hover:bg-[#C9A84C]/10 transition-colors duration-200 w-full sm:w-auto text-center"
+        >
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+          </svg>
+          802-214-3818
+        </a>
+
+      </div>
+    </section>
+
     <!-- Booking Embed -->
     <section class="py-16 bg-[#0A0A0A]">
-      <div class="max-w-4xl mx-auto px-6">
+      <div id="booking" class="max-w-4xl mx-auto px-6">
 
         <!-- Card wrapper -->
         <div class="rounded-2xl border border-white/8 bg-[#111111] overflow-hidden shadow-2xl shadow-black/50">
@@ -64,7 +98,7 @@ import Footer from '../components/Footer.astro';
 
     <!-- Contact Form -->
     <section class="py-24 bg-[#0A0A0A]">
-      <div class="max-w-2xl mx-auto px-6">
+      <div id="contact-form" class="max-w-2xl mx-auto px-6">
         <div class="text-center mb-12">
           <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
             Send a Message

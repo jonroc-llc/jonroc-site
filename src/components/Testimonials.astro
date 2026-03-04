@@ -1,104 +1,129 @@
 ---
 const testimonials = [
   {
-    quote: "We have used Jonroc Websites and Online Marketing for more than one of our businesses over the past several years. We are pleased with the prompt attention we receive and the cooperative nature of the team. We appreciate receiving educated answers on issues and receiving additional information when we have questions. We have found honesty and trustworthiness are critical when working with vendors in the business arena, especially within facets which we are not skilled or knowledgeable. In that regard we are additionally satisfied with the Jonroc Websites and Online Marketing team.",
+    quote: "Jonroc has been very helpful throughout our entire time working together. Benjamin has been excellent at responding and delivering exactly what we needed.",
+    name: "Erika Farrell",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "Amazing work done by Benjamin! Love the site he helped me with!! Very knowledgeable and will take time to explain what you might not understand. Look forward to working with Jonroc on future endeavors!",
+    name: "Daniel Ramos",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "EXCELLENT to work with! Highly Recommend!",
+    name: "Katherine O'Connell",
+    context: "Local Guide, Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "Have contracted Jonroc on a number of occasions to have them work on projects for myself, and a few other clients. Always a great experience.",
+    name: "Calin Cohan",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "Working with JonRoc is always a breeze! The best part is they know what they're doing and get projects done quickly.",
+    name: "Encore Events Rentals",
+    context: "Event Rental Company, Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "We thoroughly enjoyed working with Benjamin and teammates on getting our site up and running. They were very professional throughout the entire process.",
+    name: "U.S. Pest Control",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "We have used Jonroc Websites and Online Marketing for more than one of our businesses over the past several years. We are pleased with the prompt attention we receive and the cooperative nature of the team. We appreciate receiving educated answers on issues and receiving additional information when we have questions. Honesty and trustworthiness are critical when working with vendors in the business arena, and in that regard we are additionally satisfied with the Jonroc team.",
     name: "Leann Rodgers",
-    company: "Multi-business owner",
-    stars: 5,
+    context: "Multi-business Owner, Google Review",
     source: "Google",
-    placeholder: false,
-  },
-  // PLACEHOLDER: replace with real review
-  {
-    quote: "[Google review coming]",
-    name: "[Reviewer Name]",
-    company: "[Business type]",
     stars: 5,
+  },
+  {
+    quote: "Enjoying working with Benjamin and his group! We worked collaboratively to update our website and tweak SEO, and we've been very impressed!",
+    name: "Scott Golightly",
+    context: "Google Review",
     source: "Google",
-    placeholder: true,
-  },
-  // PLACEHOLDER: replace with real review
-  {
-    quote: "[Facebook review coming]",
-    name: "[Reviewer Name]",
-    company: "[Business type]",
     stars: 5,
-    source: "Facebook",
-    placeholder: true,
+  },
+  {
+    quote: "Jonroc Website Design and Online Marketing has been a tremendous partner to work with. I highly recommend Benjamin and the Jonroc team.",
+    name: "Jamie Dietz",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "Jonroc did a great job on my company's website: fast and efficient. I'd had two previous websites, but neither worked as well as the one Jonroc built for me.",
+    name: "Thom Helsel",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
+  },
+  {
+    quote: "They did a great job helping us define and develop our new website. Following that we started an online marketing campaign which has been doing really well.",
+    name: "Brad Mathews",
+    context: "Google Review",
+    source: "Google",
+    stars: 5,
   },
 ];
 ---
-
 <section class="py-24 bg-[#0A0A0A]">
   <div class="max-w-6xl mx-auto px-6">
+    <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+      Client Reviews
+    </p>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4">What Our Clients Say</h2>
+    <p class="text-[#9CA3AF] text-lg mb-14 max-w-xl">Real results from real businesses. All reviews from Google.</p>
 
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-        What Our Clients Say
-      </h2>
-      <p class="text-lg text-gray-400">
-        Real results from real businesses.
-      </p>
-    </div>
-
-    <!-- Testimonial Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {testimonials.map((t) => (
-        <div class={`relative flex flex-col bg-[#111111] border rounded-xl p-8 ${t.placeholder ? 'border-gray-800 opacity-50' : 'border-gray-700'}`}>
-
-          <!-- Opening Quote Mark -->
-          <div class="text-[#C9A84C] text-7xl font-serif leading-none mb-4 select-none" aria-hidden="true">
-            &ldquo;
+        <div class="bg-[#111111] border border-white/5 rounded-2xl p-8 flex flex-col hover:border-[#C9A84C]/20 transition-colors duration-300">
+          <!-- Stars -->
+          <div class="flex gap-1 mb-5" aria-label={`${t.stars} out of 5 stars`}>
+            {Array.from({ length: t.stars }).map(() => (
+              <svg class="w-4 h-4 text-[#C9A84C] fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
           </div>
 
-          <!-- Quote Text -->
-          <p class={`flex-1 text-base leading-relaxed mb-6 ${t.placeholder ? 'text-gray-600 italic' : 'text-gray-300'}`}>
+          <!-- Quote -->
+          <div class="text-4xl text-[#C9A84C] leading-none mb-3 font-serif" aria-hidden="true">&ldquo;</div>
+          <blockquote class="text-[#9CA3AF] leading-relaxed flex-1 mb-6 text-sm">
             {t.quote}
-          </p>
+          </blockquote>
 
-          <!-- Reviewer Info -->
-          <div class="mt-auto">
-            <!-- Stars -->
-            <div class="flex gap-1 mb-3" aria-label={`${t.stars} out of 5 stars`}>
-              {Array.from({ length: t.stars }).map(() => (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="#C9A84C"
-                  class="w-5 h-5"
-                  aria-hidden="true"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.163c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.062 9.384c-.783-.57-.38-1.81.588-1.81h4.163a1 1 0 00.951-.69L9.049 2.927z" />
-                </svg>
-              ))}
+          <!-- Reviewer + Source -->
+          <div class="flex items-center justify-between border-t border-white/5 pt-5">
+            <div>
+              <p class="text-[#F0F0F0] font-semibold text-sm">{t.name}</p>
+              <p class="text-[#9CA3AF] text-xs mt-0.5">{t.context}</p>
             </div>
-
-            <!-- Name + Company -->
-            <p class="text-white font-bold text-sm">{t.name}</p>
-            <p class="text-gray-500 text-sm mb-4">{t.company}</p>
-
-            <!-- Source Badge -->
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-400">
-              {t.source === "Google" && (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-3.5 h-3.5" aria-hidden="true">
-                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
-                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                </svg>
-              )}
-              {t.source === "Facebook" && (
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-3.5 h-3.5" aria-hidden="true">
-                  <path fill="#1877F2" d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/>
-                </svg>
-              )}
-              <span>{t.source}</span>
+            <!-- Google badge -->
+            <div class="flex items-center gap-1.5 text-xs text-[#9CA3AF] border border-white/10 rounded-full px-3 py-1">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+              </svg>
+              {t.source}
             </div>
           </div>
         </div>
       ))}
     </div>
-
   </div>
 </section>

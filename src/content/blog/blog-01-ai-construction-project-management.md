@@ -41,7 +41,7 @@ RFIs (Requests for Information) are where projects go to die.
 
 A sub sends an RFI. It lands in someone's inbox. They're on-site. It sits there for two days. The sub can't move forward without the answer. The project slips. Everyone's annoyed.
 
-The average commercial project handles 150 to 300 RFIs. Studies put the cost of a delayed RFI at $1,000 to $3,000 per day when it creates downstream schedule impacts. Even getting your response time from 5 days to 2 days on a 200-RFI project can save serious money.
+The average commercial project handles 150 to 300 RFIs. Imagine cutting your average RFI response time from 6 days to under 2. On a project with 200 RFIs, that kind of speed could be the difference between a smooth schedule and a cascade of costly delays.
 
 An AI agent solves this by watching your inbox and your Procore project feed. The moment an RFI comes in, it:
 
@@ -53,7 +53,7 @@ An AI agent solves this by watching your inbox and your Procore project feed. Th
 
 Nobody drops the ball because the agent doesn't sleep and doesn't forget.
 
-One general contractor we worked with cut their average RFI response time from 6 days to 1.5 days by doing exactly this. That's not a small number.
+Imagine what shaving 4 days off your average RFI response time would do to your project schedules. The downstream impact on cost and crew productivity adds up fast.
 
 ---
 
@@ -104,7 +104,7 @@ An AI agent connected to your email and QuickBooks can:
 - Push to QuickBooks once approved
 - Schedule payment according to your terms
 
-This typically cuts invoice processing time from 3 to 5 days down to same-day or next-day. One mid-size GC running 8 to 10 active projects told us they went from 2 days per week of AP time to about 3 hours. That's a full admin position worth of time freed up.
+This typically cuts invoice processing time from 3 to 5 days down to same-day or next-day. Imagine getting back 2 days of AP time every week. That's a meaningful chunk of an admin position redirected toward work that actually requires a human.
 
 ---
 
@@ -130,7 +130,7 @@ They just hit the microphone on their phone and talk. "We had fourteen guys toda
 
 The response gets formatted into a proper daily report, filed in Procore, and distributed to the PM, the owner's rep, and whoever else needs it. The foreman never opened a laptop. Never logged into anything. Never typed a single character.
 
-Submission rates typically jump from around 60% to 95% with this approach. Better data. Better documentation. Better protection if a dispute arises later. And your field guys don't resent it because it takes less time than locking their truck.
+Imagine getting your daily report submission rate from 60% to 95%. Better documentation. Better protection when disputes come up. And your field guys don't resent it because it takes less time than locking their truck.
 
 ---
 

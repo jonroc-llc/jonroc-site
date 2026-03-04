@@ -63,7 +63,7 @@ Every message is timed, personalized, and goes out automatically. Your team does
 
 The clients who were going to book anyway will book. The ones who were on the fence sometimes just need a nudge. And the ones who went elsewhere? At least you know, because they stopped responding, and you can move on.
 
-One rental operation using this kind of follow-up sequence picked up 15 to 20 percent more conversions from existing quote volume. Same pricing. Same product. Just actually following up.
+Imagine capturing 15 to 20 percent more bookings from quotes you already sent out. Same pricing. Same inventory. Just actually following up consistently.
 
 ---
 
@@ -85,7 +85,7 @@ Timed right, when the memory is fresh and the client is still feeling good about
 
 If someone responds with a complaint, the agent flags it immediately so your team can reach out personally. Getting ahead of a problem before it becomes a public one-star review is worth a lot.
 
-Companies running systematic review requests like this typically double their review volume within 90 days. For a rental business sitting at 4.1 stars with 30 reviews, getting to 4.6 stars with 80 reviews is not a small thing. It changes how prospects perceive you when they're comparing options.
+Imagine doubling your review volume in 90 days without anyone on your team doing a thing. For a rental business sitting at 4.1 stars with 30 reviews, getting to 4.6 stars with 80 reviews changes how prospects see you when they're comparing options.
 
 ---
 

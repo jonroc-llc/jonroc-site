@@ -52,8 +52,8 @@ function formatDate(dateStr: string) {
                 )}
 
                 <!-- Title -->
-                <h2 class="text-xl font-bold text-[#F0F0F0] mb-3 leading-snug">
-                  {post.data.title}
+                <h2 class="text-xl font-bold text-[#F0F0F0] mb-3 leading-snug hover:text-[#C9A84C] transition-colors duration-200">
+                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
                 </h2>
 
                 <!-- Description -->

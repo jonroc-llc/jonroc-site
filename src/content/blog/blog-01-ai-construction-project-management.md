@@ -124,9 +124,13 @@ At 3:30 PM, the agent sends the foreman a text or WhatsApp message with five sim
 - Any issues or delays?
 - Weather conditions?
 
-The foreman replies in plain text. The agent formats the responses into a proper daily report, files it in Procore, and distributes a summary to the PM, the owner's rep, and whoever else needs it.
+Here's the part that changes everything for guys in the field: the foreman doesn't have to type a word.
 
-Submission rates typically jump from around 60% to 95% with this approach. Better data. Better documentation. Better protection if a dispute arises later.
+They just hit the microphone on their phone and talk. "We had fourteen guys today, poured the east foundation wall, concrete showed up two hours late, no other issues, weather was fine." That's it. Done in 20 seconds. The AI doesn't need perfect diction. It doesn't need proper sentences. It can figure out what the foreman means even if they're talking over equipment noise or rushing to their truck. Sloppy voice input is fine. The agent cleans it up.
+
+The response gets formatted into a proper daily report, filed in Procore, and distributed to the PM, the owner's rep, and whoever else needs it. The foreman never opened a laptop. Never logged into anything. Never typed a single character.
+
+Submission rates typically jump from around 60% to 95% with this approach. Better data. Better documentation. Better protection if a dispute arises later. And your field guys don't resent it because it takes less time than locking their truck.
 
 ---
 

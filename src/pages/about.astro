@@ -1,0 +1,219 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<Layout
+  title="About Ben"
+  description="Meet Benjamin, founder of Jonroc. 15 years of real business operations — from running 35+ employees in an event rental company to building AI automation for growing businesses."
+>
+  <Header />
+
+  <main id="main-content">
+
+    <!-- ─── Hero ─────────────────────────────────────────────── -->
+    <section class="relative min-h-[60vh] flex flex-col items-center justify-center px-6 pt-32 pb-20 bg-[#0A0A0A]">
+      <!-- Radial glow -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(201,168,76,0.06) 0%, transparent 70%);"
+      ></div>
+
+      <div class="relative max-w-5xl mx-auto w-full">
+        <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+
+          <!-- Photo placeholder -->
+          <div class="flex-shrink-0">
+            <div
+              class="w-[240px] h-[320px] md:w-[300px] md:h-[400px] rounded-2xl border border-[#C9A84C]/20 bg-[#111111] flex flex-col items-center justify-center gap-4 shadow-xl shadow-black/40"
+              role="img"
+              aria-label="Photo placeholder — Ben's photo coming soon"
+            >
+              <!-- Person icon -->
+              <div class="w-20 h-20 rounded-full bg-[#1A1A1A] border border-[#C9A84C]/30 flex items-center justify-center">
+                <svg class="w-10 h-10 text-[#C9A84C]/50" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                </svg>
+              </div>
+              <p class="text-[#9CA3AF]/60 text-sm font-medium tracking-wide">Photo coming soon</p>
+            </div>
+          </div>
+
+          <!-- Headline copy -->
+          <div class="text-center md:text-left">
+            <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+              Founder & Operator
+            </p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#F0F0F0] leading-tight mb-5">
+              Meet <span class="text-[#C9A84C]">Ben</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[#9CA3AF] max-w-xl leading-relaxed">
+              15 years of hands-on business operations — from managing 35 employees in the field to installing AI agents that handle the work teams shouldn't be doing manually.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── The Story ─────────────────────────────────────────── -->
+    <section class="py-24 bg-[#0A0A0A]">
+      <!-- Section divider -->
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-[#C9A84C]/20 to-transparent mb-20" aria-hidden="true"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-6 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+          The Story
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-12 leading-tight">
+          From Washing Dishes to<br class="hidden sm:block" />
+          <span class="text-[#C9A84C]">Running the Operation</span>
+        </h2>
+
+        <!-- Story block 1 -->
+        <div class="mb-12">
+          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">The Beginning</h3>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
+            Benjamin started his professional career on the ground floor of his family's event rental business. Literally. He started by washing dishes.
+          </p>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg">
+            Over 15 years, he worked his way up to General Manager, running daily operations for a company with over 35 employees. He learned every part of the business: scheduling crews, managing inventory, handling customers, keeping the books straight, and dealing with the thousand small fires that come with running a service business.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-16 h-px bg-[#C9A84C]/30 mb-12" aria-hidden="true"></div>
+
+        <!-- Story block 2 -->
+        <div class="mb-12">
+          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">A Problem Worth Solving</h3>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
+            During that time, Ben discovered that a local web design company was overcharging his family's business for website work and online marketing. Young and stubborn enough to do something about it, he taught himself web development and took over the company's digital presence. That side project became a passion.
+          </p>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg">
+            Two years later, with his family's blessing, Ben stepped away from the rental business to launch Jonroc full-time. Since 2011, Jonroc has served clients across the country — building websites and running marketing campaigns for businesses in construction, events, professional services, and more.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-16 h-px bg-[#C9A84C]/30 mb-12" aria-hidden="true"></div>
+
+        <!-- Story block 3 -->
+        <div class="mb-12">
+          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">Seeing the Pattern</h3>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg mb-4">
+            But the industry changed. Every business now runs on a stack of software tools that were supposed to make things easier — but mostly just added more screens to check. Ben saw the same pattern over and over: companies paying for a dozen subscriptions, teams copy-pasting data between platforms, and owners still doing manual work that should have been automated years ago.
+          </p>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg">
+            The 15 years Ben spent in both the rental industry and digital services gave him something most AI consultants don't have: a deep understanding of how real businesses actually operate, from the warehouse floor to the back office. He's not selling technology for technology's sake. He's solving the same problems he used to deal with himself — just with better tools.
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="w-16 h-px bg-[#C9A84C]/30 mb-12" aria-hidden="true"></div>
+
+        <!-- Story block 4 -->
+        <div>
+          <h3 class="text-lg font-semibold text-[#C9A84C] mb-4 tracking-wide uppercase text-sm">Where Jonroc Is Today</h3>
+          <p class="text-[#9CA3AF] leading-relaxed text-lg">
+            Today, Jonroc works primarily with construction companies and event businesses — two industries where complex logistics and high-volume operations make AI automation especially impactful. Ben's approach is straightforward: show up, understand the operation, install what works, and stay around to make sure it keeps working.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── Why AI Agents ─────────────────────────────────────── -->
+    <section class="py-24 bg-[#111111] relative overflow-hidden">
+      <!-- Background glow -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);"
+      ></div>
+      <!-- Top border accent -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" aria-hidden="true"></div>
+
+      <div class="relative max-w-3xl mx-auto px-6">
+        <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-6 border border-[#C9A84C]/30 rounded-full px-4 py-1">
+          The Pivot
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-6 leading-tight">
+          Why <span class="text-[#C9A84C]">AI Agents?</span>
+        </h2>
+        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-8">
+          Ben didn't pivot to AI because it was trendy. He pivoted because he kept seeing the same exhaustion in every business he worked with — capable teams buried in repetitive, low-value work that no software subscription was actually fixing.
+        </p>
+        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-8">
+          Instead of building another website or running another ad campaign, Jonroc now installs purpose-built AI agents directly into business operations. These agents handle scheduling, document processing, customer communication, inventory tracking, and the other repetitive tasks that eat up a team's day.
+        </p>
+        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-14">
+          It's not technology for technology's sake. It's the same problem Ben's been solving since he was a 20-something running a rental crew — just with tools that didn't exist back then.
+        </p>
+
+        <!-- Three pillars -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-[#0A0A0A] rounded-xl border border-white/5 p-6">
+            <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#C9A84C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-[#F0F0F0] font-semibold mb-2">Real Experience</h3>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">15+ years operating and managing real businesses — not just consulting from the sideline.</p>
+          </div>
+          <div class="bg-[#0A0A0A] rounded-xl border border-white/5 p-6">
+            <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#C9A84C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
+              </svg>
+            </div>
+            <h3 class="text-[#F0F0F0] font-semibold mb-2">Purpose-Built</h3>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">No off-the-shelf chatbots. Every agent is built and configured around your specific operation.</p>
+          </div>
+          <div class="bg-[#0A0A0A] rounded-xl border border-white/5 p-6">
+            <div class="w-10 h-10 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5 text-[#C9A84C]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+              </svg>
+            </div>
+            <h3 class="text-[#F0F0F0] font-semibold mb-2">We Stay Around</h3>
+            <p class="text-[#9CA3AF] text-sm leading-relaxed">Installation isn't the end. Ben stays engaged to make sure the agents keep working as your business grows.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CTA ───────────────────────────────────────────────── -->
+    <section class="py-28 bg-[#0A0A0A] relative overflow-hidden">
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);"
+      ></div>
+
+      <div class="relative max-w-2xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#F0F0F0] leading-tight mb-6">
+          Ready to <span class="text-[#C9A84C]">Talk?</span>
+        </h2>
+        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-10">
+          One conversation. No pitch deck. Just an honest look at your operation and where automation actually makes sense.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-10 py-5 rounded-full hover:bg-[#E2C070] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#0A0A0A] transition-colors duration-200 shadow-xl shadow-[#C9A84C]/20"
+        >
+          Book a Discovery Call
+        </a>
+        <p class="mt-5 text-[#9CA3AF]/50 text-sm">No commitment. No pressure.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>

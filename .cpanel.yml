@@ -2,4 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/jonrocd26/public_html
-    - echo "Deployment started" > $DEPLOYPATH/deploy-test.txt
+    - export NVM_DIR=$HOME/.nvm
+    - '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+    - node -v > $DEPLOYPATH/node-version.txt
+    - which npm >> $DEPLOYPATH/node-version.txt
+    - npm -v >> $DEPLOYPATH/node-version.txt

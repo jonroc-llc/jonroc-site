@@ -48,6 +48,64 @@ details > div {
   color: #F0F0F0;
 }
 
+/* ── Gold metallic heading text ── */
+/*
+  Three-layer effect:
+  1. Vertical gradient fill: light top → rich mid → dark band → light again (metallic depth)
+  2. Animated shine sweep: a white highlight races across on a slow loop
+  3. Layered text-shadow: dark offset shadows push the letters up off the background (3D emboss)
+  Falls back to flat #C9A84C on browsers without background-clip support.
+*/
+.gold-text {
+  color: #C9A84C; /* fallback */
+  position: relative;
+  display: inline;
+}
+
+@supports ((background-clip: text) or (-webkit-background-clip: text)) {
+  .gold-text {
+    background-image:
+      /* Shine sweep layer */
+      linear-gradient(
+        105deg,
+        transparent 20%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.28) 50%,
+        transparent 60%,
+        transparent 80%
+      ),
+      /* Metallic gold gradient */
+      linear-gradient(
+        to bottom,
+        #f5e27a 0%,    /* bright highlight top */
+        #d4a843 18%,   /* rich gold */
+        #c9a84c 35%,   /* base gold */
+        #7a5c1e 52%,   /* dark shadow band — gives depth */
+        #c9a84c 65%,   /* return to base */
+        #e8c96a 80%,   /* secondary highlight */
+        #b8922a 100%   /* dark foot */
+      );
+    background-size: 200% auto, auto;
+    background-position: 110% 0, 0 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none; /* can't combine text-shadow with background-clip:text */
+    animation: gold-shine 4s ease-in-out infinite alternate;
+    /* 3D depth via filter drop-shadow (works with transparent fill) */
+    filter:
+      drop-shadow(0px 1px 0px rgba(80, 45, 5, 0.6))
+      drop-shadow(0px 2px 0px rgba(60, 30, 0, 0.35))
+      drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.3));
+  }
+}
+
+@keyframes gold-shine {
+  0%   { background-position: 110% 0, 0 0; }
+  100% { background-position: -20% 0, 0 0; }
+}
+
 /* ── Button shine animation ── */
 /* Apply .btn-shine to any button/anchor for a sweep + lift effect */
 .btn-shine {

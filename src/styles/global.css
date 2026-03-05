@@ -113,11 +113,10 @@ details > div {
 }
 
 /* ── Gold metallic buttons ── */
-/* Override Tailwind's flat bg-[#C9A84C] with the same metallic gradient as the text */
-.btn-shine.bg-\[#C9A84C\] {
-  background-color: transparent;
+/* Use a dedicated class .btn-gold applied in HTML for metallic gold buttons */
+.btn-gold {
+  background-color: transparent !important;
   background-image:
-    /* Shine sweep — starts off-screen right */
     linear-gradient(
       105deg,
       transparent 20%,
@@ -126,7 +125,6 @@ details > div {
       transparent 60%,
       transparent 80%
     ),
-    /* Metallic gold gradient */
     linear-gradient(
       to bottom,
       #f5e27a 0%,
@@ -136,29 +134,28 @@ details > div {
       #c9a84c 65%,
       #e8c96a 80%,
       #b8922a 100%
-    );
-  background-size: 200% auto, auto;
-  background-position: 110% 0, 0 0;
-  color: #0A0A0A;
-  transition: background-position 0s, transform 0.2s ease, box-shadow 0.2s ease;
+    ) !important;
+  background-size: 200% auto, auto !important;
+  background-position: 110% 0, 0 0 !important;
+  color: #0A0A0A !important;
+  transition: background-position 0s, transform 0.2s ease, box-shadow 0.2s ease !important;
 }
 
-/* On hover: sweep the shine across left-to-right, lift, glow */
-.btn-shine.bg-\[#C9A84C\]:hover {
-  background-position: -20% 0, 0 0;
-  transition: background-position 0.55s ease-out, transform 0.2s ease, box-shadow 0.2s ease;
+.btn-gold:hover {
+  background-position: -20% 0, 0 0 !important;
+  transition: background-position 0.55s ease-out, transform 0.2s ease, box-shadow 0.2s ease !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
 }
 
-.btn-shine.bg-\[#C9A84C\]:active {
+.btn-gold:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(201, 168, 76, 0.25);
 }
 
-/* Also override the hover:bg-[#E2C070] Tailwind class since we're handling it ourselves */
-.btn-shine.bg-\[#C9A84C\]:hover.hover\:bg-\[#E2C070\] {
-  background-color: transparent;
+/* Disable the generic btn-shine ::after sweep on gold buttons — the background sweep handles it */
+.btn-gold::after {
+  display: none;
 }
 
 /* ── Button shine animation ── */

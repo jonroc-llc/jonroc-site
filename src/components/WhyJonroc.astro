@@ -37,7 +37,7 @@ const pillars = [
   <div
     class="absolute inset-0 pointer-events-none"
     aria-hidden="true"
-    style="background: url('/images/lattice-tight.jpg') repeat center / 300px 300px; opacity: 0.03;"
+    style="background: url('/images/lattice-tight.jpg') repeat center / 300px 300px; opacity: 0.02;"
   ></div>
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4">Why Jonroc</h2>
@@ -47,7 +47,7 @@ const pillars = [
 
     <div class="grid sm:grid-cols-2 gap-6">
       {pillars.map((p) => (
-        <div class="bg-[#0D0D0D] border border-white/8 rounded-2xl p-8 hover:border-[#C9A84C]/20 transition-colors duration-300">
+        <div class="border border-white/8 rounded-2xl p-8 hover:border-[#C9A84C]/20 transition-colors duration-300" style="background-color: #060606;">
           <div class="text-[#C9A84C] mb-4" set:html={p.icon} />
           <h3 class="text-[#F0F0F0] font-bold text-lg mb-3">{p.title}</h3>
           <p class="text-[#9CA3AF] leading-relaxed">{p.body}</p>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CTASection from '../components/CTASection.astro';
 import { Image } from 'astro:assets';
 import benPortrait from '../assets/images/ben-portrait.jpg';
 import benCasual from '../assets/images/ben-casual.jpg';
@@ -200,40 +201,14 @@ import benStanding from '../assets/images/ben-standing.jpg';
 
       </div>
     </section>
-
     <!-- CTA -->
-    <section class="py-28 bg-[#111111] relative overflow-hidden">
-      <!-- Lattice background -->
-      <div
-        class="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style="background: url('/images/lattice-wide.jpg') repeat center / 400px 400px; opacity: 0.04;"
-      ></div>
-      <!-- Background glow -->
-      <div
-        class="absolute inset-0 pointer-events-none"
-        aria-hidden="true"
-        style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.12) 0%, transparent 70%);"
-      ></div>
-      <!-- Top border accent -->
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" aria-hidden="true"></div>
-
-      <div class="relative max-w-2xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-5xl font-bold text-[#F0F0F0] leading-tight mb-6">
-          Ready to <span class="text-[#C9A84C]">Talk?</span>
-        </h2>
-        <p class="text-[#9CA3AF] text-lg leading-relaxed mb-10">
-          One conversation. No pitch deck. Just an honest look at your operation and where automation actually makes sense.
-        </p>
-        <a
-          href="/contact"
-          class="inline-block btn-shine bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-10 py-5 rounded-full hover:bg-[#E2C070] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#0A0A0A] transition-colors duration-200 shadow-xl shadow-[#C9A84C]/20"
-        >
-          Book a Discovery Call
-        </a>
-        <p class="mt-5 text-[#9CA3AF]/50 text-sm">No commitment. No pressure.</p>
-      </div>
-    </section>
+    <CTASection
+      heading="Ready to"
+      headingHighlight="Talk?"
+      subtext="One conversation. No pitch deck. Just an honest look at your operation and where automation actually makes sense."
+      buttonText="Book a Discovery Call"
+      footnote="No commitment. No pressure."
+    />
 
   </main>
 

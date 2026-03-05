@@ -37,5 +37,39 @@ const { title, description = "Jonroc: AI Agent Installation for Growing Business
     </a>
 
     <slot />
+
+    <!-- Gold text: fire shine animation on scroll entry -->
+    <script>
+      function initGoldText() {
+        const els = document.querySelectorAll('.gold-text');
+        if (!els.length) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Small delay so animation starts just after element is visible
+                setTimeout(() => {
+                  entry.target.classList.add('gold-active');
+                }, 80);
+              } else {
+                // Reset when off-screen so it replays on re-entry
+                entry.target.classList.remove('gold-active');
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        els.forEach((el) => observer.observe(el));
+      }
+
+      // Run on initial load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGoldText);
+      } else {
+        initGoldText();
+      }
+    </script>
   </body>
 </html>

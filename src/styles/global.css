@@ -47,3 +47,45 @@ details > div {
   background-color: rgba(201, 168, 76, 0.25);
   color: #F0F0F0;
 }
+
+/* ── Button shine animation ── */
+/* Apply .btn-shine to any button/anchor for a sweep + lift effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0s;
+  pointer-events: none;
+}
+
+.btn-shine:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
+}
+
+.btn-shine:hover::after {
+  left: 160%;
+  transition: left 0.45s ease;
+}
+
+.btn-shine:active {
+  transform: translateY(0px);
+  box-shadow: 0 2px 8px rgba(201, 168, 76, 0.2);
+}

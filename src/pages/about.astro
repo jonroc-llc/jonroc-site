@@ -138,13 +138,20 @@ import benStanding from '../assets/images/ben-standing.jpg';
         </div>
 
         <!-- Photo -->
-        <div class="mt-12">
-          <img
-            src="/images/ben-graffiti.jpg"
-            alt="Benjamin Johnstone, founder of Jonroc"
-            class="rounded-2xl w-full max-w-md mx-auto block object-cover shadow-2xl"
-            loading="lazy"
-          />
+        <div class="mt-12 flex justify-center">
+          <div class="relative max-w-md w-full">
+            <!-- Gold glow behind image -->
+            <div class="absolute inset-0 rounded-2xl" style="background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,168,76,0.18) 0%, transparent 70%); filter: blur(12px); transform: scale(1.05);" aria-hidden="true"></div>
+            <!-- Gold border wrapper -->
+            <div class="relative rounded-2xl p-[2px]" style="background: linear-gradient(135deg, rgba(201,168,76,0.7) 0%, rgba(201,168,76,0.15) 50%, rgba(201,168,76,0.6) 100%);">
+              <img
+                src="/images/ben-graffiti.jpg"
+                alt="Benjamin Johnstone, founder of Jonroc"
+                class="rounded-2xl w-full object-cover shadow-2xl block"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
 
       </div>

@@ -3,32 +3,36 @@
 set -e
 
 REMOTE="jonroc.dev"
-REMOTE_PATH="~/public_html"
-DIST="dist"
+DEST="~/public_html"
 
 echo "🔨 Building..."
 npm run build
 
-echo "🚀 Deploying HTML pages..."
-find "$DIST" -name "index.html" | while read f; do
-  remote_file="$REMOTE_PATH/${f#$DIST/}"
-  remote_dir=$(dirname "$remote_file")
-  ssh "$REMOTE" "mkdir -p $remote_dir"
-  scp "$f" "$REMOTE:$remote_file"
-done
-
-echo "🎨 Deploying CSS..."
-NEW_CSS=$(ls dist/_astro/*.css | head -1 | xargs basename)
-scp dist/_astro/*.css "$REMOTE:$REMOTE_PATH/_astro/"
-# Remove stale CSS bundles
-ssh "$REMOTE" "cd $REMOTE_PATH/_astro && ls *.css | grep -v '$NEW_CSS' | xargs rm -f 2>/dev/null || true"
+echo "🎨 Deploying CSS (new bundle first)..."
+scp dist/_astro/*.css "$REMOTE:$DEST/_astro/"
 
 echo "📜 Deploying JS..."
-ls dist/_astro/*.js 2>/dev/null && scp dist/_astro/*.js "$REMOTE:$REMOTE_PATH/_astro/" || true
+ls dist/_astro/*.js 2>/dev/null && scp dist/_astro/*.js "$REMOTE:$DEST/_astro/" || true
 
-echo "🗺️  Deploying sitemap + robots..."
-scp dist/sitemap-index.xml "$REMOTE:$REMOTE_PATH/sitemap-index.xml" 2>/dev/null || true
-scp dist/sitemap-0.xml "$REMOTE:$REMOTE_PATH/sitemap-0.xml" 2>/dev/null || true
-scp dist/robots.txt "$REMOTE:$REMOTE_PATH/robots.txt"
+echo "🖼️  Deploying static assets..."
+scp dist/robots.txt "$REMOTE:$DEST/robots.txt"
+scp dist/sitemap-index.xml "$REMOTE:$DEST/sitemap-index.xml" 2>/dev/null || true
+scp dist/sitemap-0.xml "$REMOTE:$DEST/sitemap-0.xml" 2>/dev/null || true
+
+echo "🚀 Deploying HTML pages..."
+scp dist/index.html                                                          "$REMOTE:$DEST/index.html"
+scp dist/about/index.html                                                    "$REMOTE:$DEST/about/index.html"
+scp dist/contact/index.html                                                  "$REMOTE:$DEST/contact/index.html"
+scp dist/portfolio/index.html                                                "$REMOTE:$DEST/portfolio/index.html"
+scp dist/blog/index.html                                                     "$REMOTE:$DEST/blog/index.html"
+scp dist/blog/blog-01-ai-construction-project-management/index.html         "$REMOTE:$DEST/blog/blog-01-ai-construction-project-management/index.html"
+scp dist/blog/blog-02-event-rental-automation/index.html                    "$REMOTE:$DEST/blog/blog-02-event-rental-automation/index.html"
+scp dist/industries/construction/index.html                                  "$REMOTE:$DEST/industries/construction/index.html"
+scp dist/industries/events/index.html                                        "$REMOTE:$DEST/industries/events/index.html"
+scp dist/industries/rental/index.html                                        "$REMOTE:$DEST/industries/rental/index.html"
+
+echo "🧹 Cleaning stale CSS bundles..."
+NEW_CSS=$(ls dist/_astro/*.css | xargs -I{} basename {})
+ssh "$REMOTE" "cd $DEST/_astro && ls *.css | grep -v '$NEW_CSS' | xargs rm -f 2>/dev/null || true"
 
 echo "✅ Deploy complete."

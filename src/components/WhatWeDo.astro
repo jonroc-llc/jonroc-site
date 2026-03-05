@@ -62,8 +62,14 @@ const features = [
   },
 ];
 ---
-<section class="py-24 bg-[#0A0A0A]">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="py-24 bg-[#0A0A0A] relative overflow-hidden">
+  <!-- Wide lattice background pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+    style="background: url('/images/lattice-wide.svg') repeat center / 400px 400px; opacity: 0.04;"
+  ></div>
+  <div class="max-w-6xl mx-auto px-6 relative">
     <div class="max-w-3xl mb-14">
       <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-6">What We Do</h2>
       <p class="text-[#9CA3AF] text-lg leading-relaxed">

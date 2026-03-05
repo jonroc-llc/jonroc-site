@@ -32,7 +32,13 @@ const pillars = [
   },
 ];
 ---
-<section class="py-24 bg-[#111111]">
+<section class="py-24 bg-[#111111] relative overflow-hidden">
+  <!-- Tight lattice background pattern -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+    style="background: url('/images/lattice-tight.svg') repeat center / 300px 300px; opacity: 0.03;"
+  ></div>
   <div class="max-w-6xl mx-auto px-6">
     <h2 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4">Why Jonroc</h2>
     <p class="text-[#9CA3AF] text-lg mb-14 max-w-xl">

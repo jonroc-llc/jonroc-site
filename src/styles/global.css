@@ -78,12 +78,12 @@ details > div {
       linear-gradient(
         to bottom,
         #f5e27a 0%,
-        #d4a843 18%,
-        #c9a84c 35%,
-        #7a5c1e 52%,
-        #c9a84c 65%,
-        #e8c96a 80%,
-        #b8922a 100%
+        #e8c96a 15%,
+        #d4a843 30%,
+        #c9a84c 50%,
+        #a07828 72%,
+        #7a5c1e 88%,
+        #4a3510 100%
       );
     background-size: 200% auto, auto;
     background-position: 110% 0, 0 0;

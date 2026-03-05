@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import benPortrait from '../assets/images/ben-portrait.jpg';
 ---
 <section class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-20 bg-[#0A0A0A]">
   <!-- Subtle radial glow behind headline -->
@@ -54,15 +56,19 @@
             style="background: #C9A84C;"
             aria-hidden="true"
           ></div>
-          <img
-            src="/images/ben-portrait.jpg"
-            alt="Benjamin, founder of Jonroc"
+          <Image
+            src={benPortrait}
+            alt="Benjamin Johnstone, founder of Jonroc"
+            width={360}
+            height={460}
+            format="webp"
+            quality={85}
             class="relative w-[260px] md:w-[320px] lg:w-[360px] rounded-2xl border-2 border-[#C9A84C]/40 shadow-2xl shadow-black/60 object-cover"
             loading="eager"
           />
           <!-- Name + title -->
           <div class="relative mt-4 text-center">
-            <p class="text-[#F0F0F0] font-semibold text-base">Benjamin Rock</p>
+            <p class="text-[#F0F0F0] font-semibold text-base">Benjamin Johnstone</p>
             <p class="text-[#C9A84C] text-sm tracking-wide">Owner, Jonroc</p>
           </div>
         </div>

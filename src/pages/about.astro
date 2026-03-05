@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import benPortrait from '../assets/images/ben-portrait.jpg';
+import benCasual from '../assets/images/ben-casual.jpg';
+import benHeadshot from '../assets/images/ben-headshot.jpg';
+import benStanding from '../assets/images/ben-standing.jpg';
 ---
 <Layout
   title="About Benjamin"
@@ -32,9 +37,13 @@ import Footer from '../components/Footer.astro';
                 style="background: #C9A84C;"
                 aria-hidden="true"
               ></div>
-              <img
-                src="/images/ben-portrait.jpg"
-                alt="Benjamin, founder of Jonroc"
+              <Image
+                src={benPortrait}
+                alt="Benjamin Johnstone, founder of Jonroc"
+                width={300}
+                height={400}
+                format="webp"
+                quality={85}
                 class="relative w-[240px] h-[320px] md:w-[300px] md:h-[400px] rounded-2xl border-2 border-[#C9A84C]/40 shadow-2xl shadow-black/60 object-cover"
                 loading="eager"
               />

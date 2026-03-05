@@ -2,6 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import imgCalwest from '../assets/images/portfolio/calwest-rentals.jpg';
+import imgSiouxFalls from '../assets/images/portfolio/sioux-falls-commercial.jpg';
+import imgRentalInnovationz from '../assets/images/portfolio/rental-innovationz.jpg';
+import imgRentalWorld from '../assets/images/portfolio/rental-world.jpg';
+import imgTlcEvents from '../assets/images/portfolio/tlc-event-rentals.jpg';
 
 const portfolioItems = [
   {
@@ -9,7 +15,7 @@ const portfolioItems = [
     domain: "calwestrentals.com",
     url: "https://calwestrentals.com",
     category: "Tool & Equipment Rental",
-    screenshot: "/images/portfolio/calwest-rentals.jpg",
+    screenshot: imgCalwest,
     description1: "Full website and online marketing for a California-based tool and equipment rental company.",
     description2: "Built to drive online bookings and local search visibility.",
   },
@@ -18,7 +24,7 @@ const portfolioItems = [
     domain: "siouxfallscommercial.com",
     url: "https://siouxfallscommercial.com",
     category: "Commercial Real Estate",
-    screenshot: "/images/portfolio/sioux-falls-commercial.jpg",
+    screenshot: imgSiouxFalls,
     description1: "Website for a commercial real estate company that builds and manages commercial construction projects for sale.",
     description2: "Features advanced portfolio search functionality to help buyers find and filter available properties.",
   },
@@ -27,7 +33,7 @@ const portfolioItems = [
     domain: "rentalinnovationz.com",
     url: "https://rentalinnovationz.com",
     category: "Event Rental Supply",
-    screenshot: "/images/portfolio/rental-innovationz.jpg",
+    screenshot: imgRentalInnovationz,
     description1: "E-commerce website for an event rental supply company specializing in table and chair bags, tent sidewalls, and accessories for the rental industry.",
     description2: "Built with direct online purchasing so rental companies can order supplies without picking up the phone.",
   },
@@ -36,7 +42,7 @@ const portfolioItems = [
     domain: "rentalworld.com",
     url: "https://rentalworld.com",
     category: "Equipment Rental",
-    screenshot: "/images/portfolio/rental-world.jpg",
+    screenshot: imgRentalWorld,
     description1: "Website redesign and SEO for an established equipment rental company.",
     description2: "Focused on improving search visibility and streamlining the customer inquiry process.",
   },
@@ -44,7 +50,7 @@ const portfolioItems = [
     name: "TLC Event Rentals",
     domain: "tlceventrentals.com",
     url: "https://tlceventrentals.com",
-    screenshot: "/images/portfolio/tlc-event-rentals.jpg",
+    screenshot: imgTlcEvents,
     category: "Event Rental",
     description1: "Event rental company website with a focus on weddings and corporate events.",
     description2: "Built to showcase inventory and convert browsers into booked clients.",
@@ -88,9 +94,13 @@ const portfolioItems = [
 
               <!-- Screenshot -->
               <div class="relative overflow-hidden" style="height: 250px; border-bottom: 1px solid rgba(201,168,76,0.2);">
-                <img
+                <Image
                   src={item.screenshot}
                   alt={`Screenshot of ${item.name} website`}
+                  width={600}
+                  height={400}
+                  format="webp"
+                  quality={82}
                   class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
               </div>

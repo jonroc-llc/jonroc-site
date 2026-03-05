@@ -221,7 +221,7 @@ import Footer from '../components/Footer.astro';
             };
 
             try {
-              const res = await fetch('http://173.199.127.41:3456/contact', {
+              const res = await fetch('https://api.jonroc.dev/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),

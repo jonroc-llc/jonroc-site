@@ -143,14 +143,14 @@ details > div {
 
 .btn-gold:hover {
   background-position: -20% 0, 0 0 !important;
-  transition: background-position 0.55s ease-out, transform 0.2s ease, box-shadow 0.2s ease !important;
+  transition: background-position 0.55s ease-out, transform 0.2s ease !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201, 168, 76, 0.45);
+  box-shadow: none !important;
 }
 
 .btn-gold:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(201, 168, 76, 0.25);
+  box-shadow: none !important;
 }
 
 /* Disable the generic btn-shine ::after sweep on gold buttons — the background sweep handles it */

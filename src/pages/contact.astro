@@ -244,8 +244,22 @@ import Footer from '../components/Footer.astro';
     </section>
 
     <!-- Location info only (no exposed email) -->
-    <section class="py-24 bg-[#0A0A0A]">
-      <div class="max-w-5xl mx-auto px-6">
+    <section class="py-24 bg-[#111111] relative overflow-hidden">
+      <!-- Lattice background -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: url('/images/lattice-wide.jpg') repeat center / 400px 400px; opacity: 0.04;"
+      ></div>
+      <!-- Background glow -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        aria-hidden="true"
+        style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.12) 0%, transparent 70%);"
+      ></div>
+      <!-- Top border accent -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/60 to-transparent" aria-hidden="true"></div>
+      <div class="max-w-5xl mx-auto px-6 relative">
         <div class="text-center mb-14">
           <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-5 border border-[#C9A84C]/30 rounded-full px-4 py-1">
             Based In

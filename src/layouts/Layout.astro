@@ -48,13 +48,11 @@ const { title, description = "Jonroc: AI Agent Installation for Growing Business
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Small delay so animation starts just after element is visible
                 setTimeout(() => {
                   entry.target.classList.add('gold-active');
+                  // Unobserve after firing — one-shot only
+                  observer.unobserve(entry.target);
                 }, 80);
-              } else {
-                // Reset when off-screen so it replays on re-entry
-                entry.target.classList.remove('gold-active');
               }
             });
           },

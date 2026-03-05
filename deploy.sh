@@ -30,6 +30,8 @@ scp dist/blog/blog-02-event-rental-automation/index.html                    "$RE
 scp dist/industries/construction/index.html                                  "$REMOTE:$DEST/industries/construction/index.html"
 scp dist/industries/events/index.html                                        "$REMOTE:$DEST/industries/events/index.html"
 scp dist/industries/rental/index.html                                        "$REMOTE:$DEST/industries/rental/index.html"
+ssh "$REMOTE" "mkdir -p $DEST/thank-you"
+scp dist/thank-you/index.html                                                "$REMOTE:$DEST/thank-you/index.html"
 
 echo "🧹 Cleaning stale CSS bundles..."
 NEW_CSS=$(ls dist/_astro/*.css | xargs -I{} basename {})

@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Message Received | Jonroc"
+  description="Thank you for reaching out. We'll be in touch shortly."
+>
+  <section class="min-h-screen bg-[#0A0A0A] flex items-center justify-center px-6 py-24">
+    <div class="max-w-xl mx-auto text-center">
+
+      <!-- Gold check icon -->
+      <div class="w-20 h-20 rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mx-auto mb-8">
+        <svg class="w-10 h-10 text-[#C9A84C]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-[#F0F0F0] mb-4 leading-tight">
+        Message <span class="text-[#C9A84C] gold-text">Received</span>
+      </h1>
+
+      <p class="text-[#9CA3AF] text-lg leading-relaxed mb-10">
+        Thanks for reaching out. Benjamin will review your message and get back to you within one business day.
+      </p>
+
+      <a
+        href="/"
+        class="inline-block btn-shine btn-gold bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-8 py-4 rounded-full hover:bg-[#E2C070] transition-colors duration-200"
+      >
+        Back to Home
+      </a>
+
+    </div>
+  </section>
+</Layout>

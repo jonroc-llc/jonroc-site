@@ -17,6 +17,9 @@ import Footer from '../components/Footer.astro';
   title="AI Agent Installation for Growing Businesses"
   description="Jonroc installs AI agents that handle the repetitive work your team hates doing. Custom automation for construction companies and event businesses. Book a free discovery call."
 >
+  <!-- Preload LCP background image -->
+  <link slot="head" rel="preload" as="image" type="image/webp" href="/images/gold-particle-wave.webp" fetchpriority="high" />
+
   <Header />
 
   <main id="main-content">

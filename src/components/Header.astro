@@ -6,12 +6,17 @@ import Button from './ui/Button.astro';
 
     <!-- Logo -->
     <a href="/" class="flex items-center" aria-label="Jonroc home">
-      <img
-        src="/images/jonroc-logo.png"
-        alt="Jonroc"
-        class="h-14 w-auto"
-        loading="eager"
-      />
+      <picture>
+        <source srcset="/images/jonroc-logo.webp" type="image/webp" />
+        <img
+          src="/images/jonroc-logo.png"
+          alt="Jonroc"
+          class="h-14 w-auto"
+          width="181"
+          height="56"
+          loading="eager"
+        />
+      </picture>
     </a>
 
     <!-- Desktop nav -->

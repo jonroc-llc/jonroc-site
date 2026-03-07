@@ -26,6 +26,9 @@ const { title, description = "Jonroc: AI Agent Installation for Growing Business
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Jonroc" />
+
+    <!-- Page-specific head content (preloads, etc.) -->
+    <slot name="head" />
   </head>
   <body class="min-h-screen bg-[#0A0A0A] text-[#F0F0F0] antialiased">
     <!-- Skip to main content for accessibility -->

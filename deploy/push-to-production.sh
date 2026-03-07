@@ -19,8 +19,27 @@ LOG_FILE="/home/jonrocd26/logs/deploy-production.log"
 
 mkdir -p "$(dirname "$LOG_FILE")"
 TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
+HTACCESS_TRACKING="/home/jonrocd26/deploy/htaccess-size.txt"
+HTACCESS_SOURCE="/home/jonrocd26/public_html/.htaccess"
 
 echo "[$TIMESTAMP] Starting push to production..." | tee -a "$LOG_FILE"
+
+# ── .htaccess size check ─────────────────────────────────────
+CURRENT_SIZE=$(stat -c%s "$HTACCESS_SOURCE" 2>/dev/null || echo "0")
+if [ -f "$HTACCESS_TRACKING" ]; then
+  LAST_SIZE=$(cat "$HTACCESS_TRACKING")
+  if [ "$CURRENT_SIZE" != "$LAST_SIZE" ]; then
+    echo "HTACCESS_CHANGED: was ${LAST_SIZE} bytes, now ${CURRENT_SIZE} bytes"
+    echo "[$TIMESTAMP] ⚠️  .htaccess size changed (${LAST_SIZE}B → ${CURRENT_SIZE}B). Manual update of jonroc.com .htaccess required." | tee -a "$LOG_FILE"
+  else
+    echo "HTACCESS_OK: ${CURRENT_SIZE} bytes (unchanged)"
+  fi
+else
+  echo "HTACCESS_OK: baseline set at ${CURRENT_SIZE} bytes"
+fi
+# Store current size as new baseline
+echo "$CURRENT_SIZE" > "$HTACCESS_TRACKING"
+# ─────────────────────────────────────────────────────────────
 
 # Verify SSH access to production
 if ! ssh -i "$DEPLOY_KEY" -o StrictHostKeyChecking=no jonroc6@localhost "test -d /home/jonroc6/public_html" 2>/dev/null; then

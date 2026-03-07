@@ -95,9 +95,10 @@ import Button from './ui/Button.astro';
       role="button"
       tabindex="0"
       aria-label="Play founder intro video"
+      style="background-image: url('/images/video-placeholder.png'); background-size: cover; background-position: center;"
     >
-      <!-- Dark gradient overlay on hover -->
-      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-2xl" aria-hidden="true"></div>
+      <!-- Dark overlay — dims poster image, deepens on hover -->
+      <div class="absolute inset-0 bg-black/40 group-hover:bg-black/55 transition-colors duration-300 rounded-2xl" aria-hidden="true"></div>
 
       <!-- Play button -->
       <div class="relative w-20 h-20 rounded-full border-2 border-[#C9A84C]/60 bg-[#C9A84C]/10 flex items-center justify-center group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/20 group-hover:scale-110 transition-all duration-300">
@@ -107,8 +108,8 @@ import Button from './ui/Button.astro';
       </div>
 
       <div class="relative text-center">
-        <p class="text-[#F0F0F0] font-semibold text-base">Watch the Overview</p>
-        <p class="text-[#9CA3AF] text-sm mt-1">AI Co-Partner for Business Operations</p>
+        <p class="text-[#F0F0F0] font-semibold text-base drop-shadow">Watch the Overview</p>
+        <p class="text-[#F0F0F0]/70 text-sm mt-1 drop-shadow">AI Co-Partner for Business Operations</p>
       </div>
     </div>
 

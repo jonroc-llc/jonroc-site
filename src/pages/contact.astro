@@ -227,11 +227,10 @@ import Button from '../components/ui/Button.astro';
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
-            // Check Altcha is verified
-            const altchaEl = form.querySelector('altcha-widget');
-            const altchaPayload = altchaEl?.value || '';
+            // Altcha injects a hidden <input name="altcha"> when verified
+            const altchaPayload = (form.elements['altcha']?.value || '').trim();
             if (!altchaPayload) {
-              errEl.textContent = 'Please wait for the security check to complete.';
+              errEl.textContent = 'Please wait for the security check to complete, then try again.';
               errEl.classList.remove('hidden');
               btn.disabled = false;
               btn.textContent = 'Send Message';

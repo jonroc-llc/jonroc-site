@@ -34,6 +34,7 @@ rsync -az --delete \
   --exclude 'cgi-bin' \
   --exclude '.htaccess.bak' \
   --exclude 'Outside_Content' \
+  --exclude 'deploy' \
   "$STAGING_DIR/" \
   "$PRODUCTION_DIR/"
 

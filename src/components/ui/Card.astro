@@ -1,0 +1,24 @@
+---
+interface Props {
+  bg?: string;
+  padding?: string;
+  class?: string;
+}
+
+const {
+  bg = '#1A1A1A',
+  padding = 'p-8',
+  class: className,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    'border border-white/5 rounded-2xl hover:border-[#C9A84C]/20 transition-colors duration-300',
+    padding,
+    className,
+  ]}
+  style={`background-color: ${bg};`}
+>
+  <slot />
+</div>

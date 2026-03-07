@@ -1,0 +1,23 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const { size = 'md', class: className } = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-8 h-8',
+  md: 'w-10 h-10',
+  lg: 'w-12 h-12',
+  xl: 'w-20 h-20',
+};
+---
+
+<div class:list={[
+  'rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/20 flex items-center justify-center flex-shrink-0',
+  sizeClasses[size],
+  className,
+]}>
+  <slot />
+</div>

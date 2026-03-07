@@ -3,17 +3,10 @@ import { getCollection } from 'astro:content';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/ui/BlogCard.astro';
 
 const allPosts = await getCollection('blog');
 const posts = allPosts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
-
-function formatDate(dateStr: string) {
-  return new Date(dateStr).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
 ---
 
 <Layout title="Blog" description="Insights on AI agents, online marketing, and running a smarter business.">
@@ -38,50 +31,14 @@ function formatDate(dateStr: string) {
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post) => (
-            <article class="flex flex-col bg-[#111111] border border-white/5 rounded-2xl overflow-hidden hover:border-[#C9A84C]/30 transition-colors duration-300">
-              <div class="flex flex-col flex-1 p-8">
-                <!-- Tags -->
-                {post.data.tags.length > 0 && (
-                  <div class="flex flex-wrap gap-2 mb-4">
-                    {post.data.tags.slice(0, 3).map((tag: string) => (
-                      <span class="text-xs font-medium text-[#C9A84C] bg-[#C9A84C]/10 px-2.5 py-1 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <!-- Title -->
-                <h2 class="text-xl font-bold text-[#F0F0F0] mb-3 leading-snug hover:text-[#C9A84C] transition-colors duration-200">
-                  <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-                </h2>
-
-                <!-- Description -->
-                <p class="text-[#9CA3AF] text-sm leading-relaxed mb-6 flex-1">
-                  {post.data.description}
-                </p>
-
-                <!-- Meta + Link -->
-                <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
-                  <div class="flex flex-col gap-0.5">
-                    <span class="text-xs text-[#F0F0F0] font-medium">{post.data.author}</span>
-                    <time class="text-xs text-[#9CA3AF]" datetime={post.data.date}>
-                      {formatDate(post.data.date)}
-                    </time>
-                  </div>
-                  <a
-                    href={`/blog/${post.slug}`}
-                    class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A84C] hover:text-[#E2C070] transition-colors duration-200"
-                    aria-label={`Read ${post.data.title}`}
-                  >
-                    Read More
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </article>
+            <BlogCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              tags={post.data.tags}
+              author={post.data.author}
+              date={post.data.date}
+            />
           ))}
         </div>
       )}

@@ -1,0 +1,69 @@
+---
+interface Props {
+  variant?: 'gold' | 'outline' | 'ghost';
+  href?: string;
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  target?: string;
+  rel?: string;
+  fullWidth?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  id?: string;
+  disabled?: boolean;
+}
+
+const {
+  variant = 'gold',
+  href,
+  size = 'md',
+  class: className,
+  target,
+  rel,
+  fullWidth = false,
+  type = 'button',
+  id,
+  disabled,
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'text-xs px-4 py-2',
+  md: 'text-base px-7 py-3.5',
+  lg: 'text-base px-10 py-5',
+};
+
+const variantClasses = {
+  gold: 'btn-shine btn-gold bg-[#C9A84C] text-[#0A0A0A] font-bold hover:bg-[#E2C070] focus:ring-[#C9A84C] focus:ring-offset-[#0A0A0A]',
+  outline: 'btn-shine border border-[#C9A84C]/50 text-[#C9A84C] font-semibold hover:bg-[#C9A84C] hover:text-[#0A0A0A] focus:ring-[#C9A84C] focus:ring-offset-[#1A1A1A]',
+  ghost: 'border border-white/20 text-[#F0F0F0] font-semibold hover:border-white/40 focus:ring-white/30',
+};
+
+const baseClasses = 'inline-block rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-200';
+const widthClass = fullWidth ? 'w-full text-center' : '';
+
+const allClasses = [baseClasses, variantClasses[variant], sizeClasses[size], widthClass, className]
+  .filter(Boolean)
+  .join(' ');
+
+const isLink = !!href;
+---
+
+{isLink ? (
+  <a
+    href={href}
+    class={allClasses}
+    target={target}
+    rel={rel}
+    id={id}
+  >
+    <slot />
+  </a>
+) : (
+  <button
+    type={type}
+    class={allClasses}
+    id={id}
+    disabled={disabled}
+  >
+    <slot />
+  </button>
+)}

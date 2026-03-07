@@ -1,4 +1,5 @@
 ---
+import Button from './ui/Button.astro';
 ---
 <section class="relative py-28 bg-[#0D0B08] overflow-hidden">
   <!-- Gold glow background effect -->
@@ -41,15 +42,12 @@
         </div>
 
         <div class="mt-10">
-          <a
-            href="/contact"
-            class="inline-flex items-center gap-2 text-[#C9A84C] font-semibold text-base border border-[#C9A84C]/40 rounded-full px-6 py-3 hover:bg-[#C9A84C]/10 hover:border-[#C9A84C]/70 transition-all duration-200"
-          >
+          <Button variant="outline" href="/contact" size="md" class="inline-flex items-center gap-2">
             See how it works
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
-          </a>
+          </Button>
         </div>
       </div>
 

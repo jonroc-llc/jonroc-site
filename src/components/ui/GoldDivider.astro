@@ -1,0 +1,37 @@
+---
+interface Props {
+  position?: 'top' | 'inline';
+  width?: string;
+  class?: string;
+  opacity?: string;
+}
+
+const {
+  position = 'inline',
+  width = 'w-48',
+  class: className,
+  opacity = 'via-[#C9A84C]/60',
+} = Astro.props;
+---
+
+{position === 'top' ? (
+  <div
+    class:list={[
+      'absolute top-0 left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent to-transparent',
+      width,
+      opacity,
+      className,
+    ]}
+    aria-hidden="true"
+  ></div>
+) : (
+  <div
+    class:list={[
+      'h-px bg-gradient-to-r from-transparent to-transparent',
+      width,
+      opacity,
+      className,
+    ]}
+    aria-hidden="true"
+  ></div>
+)}

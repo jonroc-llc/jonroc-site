@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
 ---
 
 <Layout
@@ -24,12 +25,9 @@ import Layout from '../layouts/Layout.astro';
         Thanks for reaching out. Benjamin will review your message and get back to you within one business day.
       </p>
 
-      <a
-        href="/"
-        class="inline-block btn-shine btn-gold bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-8 py-4 rounded-full hover:bg-[#E2C070] transition-colors duration-200"
-      >
+      <Button variant="gold" href="/" size="lg" class="focus:ring-offset-[#0A0A0A]">
         Back to Home
-      </a>
+      </Button>
 
     </div>
   </section>

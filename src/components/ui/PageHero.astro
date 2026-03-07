@@ -1,0 +1,50 @@
+---
+import SectionLabel from './SectionLabel.astro';
+
+interface Props {
+  label?: string;
+  align?: 'center' | 'left';
+  minHeight?: string;
+  class?: string;
+}
+
+const {
+  label,
+  align = 'center',
+  minHeight = 'min-h-[70vh]',
+  class: className,
+} = Astro.props;
+
+const alignClasses = align === 'center' ? 'text-center' : 'text-left';
+---
+
+<section class:list={[
+  'relative flex flex-col items-center justify-center px-6 pt-36 pb-24 bg-[#0A0A0A]',
+  minHeight,
+  className,
+]}>
+  <!-- Radial glow -->
+  <div
+    class="absolute inset-0 pointer-events-none"
+    aria-hidden="true"
+    style="background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(201,168,76,0.07) 0%, transparent 70%);"
+  ></div>
+
+  <div class:list={['relative max-w-4xl mx-auto w-full', alignClasses]}>
+    {label && <SectionLabel text={label} mb="mb-6" />}
+
+    <slot />
+
+    {Astro.slots.has('subtitle') && (
+      <div class="mt-4">
+        <slot name="subtitle" />
+      </div>
+    )}
+
+    {Astro.slots.has('cta') && (
+      <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+        <slot name="cta" />
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  tags: string[];
+  author: string;
+  date: string;
+}
+
+const { title, description, slug, tags, author, date } = Astro.props;
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<article class="flex flex-col bg-[#111111] border border-white/5 rounded-2xl overflow-hidden hover:border-[#C9A84C]/30 transition-colors duration-300">
+  <div class="flex flex-col flex-1 p-8">
+    <!-- Tags -->
+    {tags.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-4">
+        {tags.slice(0, 3).map((tag: string) => (
+          <span class="text-xs font-medium text-[#C9A84C] bg-[#C9A84C]/10 px-2.5 py-1 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+
+    <!-- Title -->
+    <h2 class="text-xl font-bold text-[#F0F0F0] mb-3 leading-snug hover:text-[#C9A84C] transition-colors duration-200">
+      <a href={`/blog/${slug}`}>{title}</a>
+    </h2>
+
+    <!-- Description -->
+    <p class="text-[#9CA3AF] text-sm leading-relaxed mb-6 flex-1">
+      {description}
+    </p>
+
+    <!-- Meta + Link -->
+    <div class="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+      <div class="flex flex-col gap-0.5">
+        <span class="text-xs text-[#F0F0F0] font-medium">{author}</span>
+        <time class="text-xs text-[#9CA3AF]" datetime={date}>
+          {formatDate(date)}
+        </time>
+      </div>
+      <a
+        href={`/blog/${slug}`}
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A84C] hover:text-[#E2C070] transition-colors duration-200"
+        aria-label={`Read ${title}`}
+      >
+        Read More
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</article>

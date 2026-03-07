@@ -1,0 +1,17 @@
+---
+interface Props {
+  text?: string;
+  class?: string;
+  mb?: string;
+}
+
+const { text, class: className, mb = 'mb-5' } = Astro.props;
+---
+
+<p class:list={[
+  'inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase border border-[#C9A84C]/30 rounded-full px-4 py-1',
+  mb,
+  className,
+]}>
+  {text ?? <slot />}
+</p>

@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import benPortrait from '../assets/images/ben-portrait.jpg';
+import SectionLabel from './ui/SectionLabel.astro';
+import Button from './ui/Button.astro';
 ---
 <section class="relative min-h-screen flex flex-col items-center justify-center px-6 pt-36 pb-20 bg-[#0A0A0A] overflow-hidden">
   <!-- Golden particle wave background -->
@@ -22,9 +24,7 @@ import benPortrait from '../assets/images/ben-portrait.jpg';
       <!-- Left: Text content -->
       <div class="flex-1 text-center md:text-left">
         <!-- Label -->
-        <p class="inline-block text-[#C9A84C] text-sm font-semibold tracking-widest uppercase mb-6 border border-[#C9A84C]/30 rounded-full px-4 py-1">
-          AI Agent Installation
-        </p>
+        <SectionLabel text="AI Agent Installation" mb="mb-6" />
 
         <!-- h1 -->
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F0F0F0] leading-tight mb-6">
@@ -44,13 +44,15 @@ import benPortrait from '../assets/images/ben-portrait.jpg';
         </p>
 
         <!-- CTA -->
-        <a
-          id="book-call"
+        <Button
+          variant="gold"
           href="/contact"
-          class="inline-block btn-shine btn-gold bg-[#C9A84C] text-[#0A0A0A] font-bold text-base px-8 py-4 rounded-full hover:bg-[#E2C070] focus:outline-none focus:ring-2 focus:ring-[#C9A84C] focus:ring-offset-2 focus:ring-offset-[#0A0A0A] transition-colors duration-200"
+          size="lg"
+          id="book-call"
+          class="focus:ring-offset-[#0A0A0A]"
         >
           Book a Free Discovery Call
-        </a>
+        </Button>
       </div>
 
       <!-- Right: Benjamin's photo -->

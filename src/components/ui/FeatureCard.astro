@@ -1,0 +1,19 @@
+---
+interface Props {
+  icon: string;
+  title: string;
+  body: string;
+  bg?: string;
+}
+
+const { icon, title, body, bg = '#0D0D0D' } = Astro.props;
+---
+
+<div
+  class="border border-white/8 rounded-2xl p-8 hover:border-[#C9A84C]/30 transition-colors duration-300"
+  style={`background-color: ${bg};`}
+>
+  <div class="text-[#C9A84C] mb-4" set:html={icon} />
+  <h3 class="text-[#F0F0F0] font-semibold text-lg mb-3">{title}</h3>
+  <p class="text-[#9CA3AF] leading-relaxed">{body}</p>
+</div>

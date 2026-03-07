@@ -1,4 +1,6 @@
 ---
+import FeatureCard from './ui/FeatureCard.astro';
+
 const pillars = [
   {
     icon: `<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
@@ -47,11 +49,7 @@ const pillars = [
 
     <div class="grid sm:grid-cols-2 gap-6">
       {pillars.map((p) => (
-        <div class="border border-white/8 rounded-2xl p-8 hover:border-[#C9A84C]/20 transition-colors duration-300" style="background-color: #060606;">
-          <div class="text-[#C9A84C] mb-4" set:html={p.icon} />
-          <h3 class="text-[#F0F0F0] font-bold text-lg mb-3">{p.title}</h3>
-          <p class="text-[#9CA3AF] leading-relaxed">{p.body}</p>
-        </div>
+        <FeatureCard icon={p.icon} title={p.title} body={p.body} bg="#060606" />
       ))}
     </div>
   </div>

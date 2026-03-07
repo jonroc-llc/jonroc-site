@@ -1,0 +1,22 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<li class="flex gap-3">
+  <span class="text-[#C9A84C] mt-1 flex-shrink-0" aria-hidden="true">&#x25B8;</span>
+  <div>
+    {title ? (
+      <>
+        <span class="text-[#F0F0F0] font-semibold">{title}</span>
+        {description && <span class="text-[#9CA3AF]"> {description}</span>}
+      </>
+    ) : (
+      <slot />
+    )}
+  </div>
+</li>

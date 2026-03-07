@@ -12,6 +12,8 @@ import Button from '../components/ui/Button.astro';
   title="Contact"
   description="Book a free 15-minute discovery call with Benjamin at Jonroc. Let's talk about your business operations and where AI agents can make the biggest difference."
 >
+  <script slot="head" type="module" src="https://cdn.jsdelivr.net/npm/altcha/dist/altcha.min.js"></script>
+
   <Header />
 
   <main id="main-content">
@@ -188,6 +190,15 @@ import Button from '../components/ui/Button.astro';
             ></textarea>
           </div>
 
+          <!-- Altcha widget -->
+          <div>
+            <altcha-widget
+              challengeurl="/altcha-challenge.php"
+              hidefooter
+              style="--altcha-border-color: rgba(255,255,255,0.1); --altcha-border-radius: 12px; --altcha-color-base: #1A1A1A; --altcha-color-text: #F0F0F0; --altcha-color-border-focus: rgba(201,168,76,0.6); --altcha-color-brand: #C9A84C;"
+            ></altcha-widget>
+          </div>
+
           <!-- Error message -->
           <div id="form-error" class="hidden text-red-400 text-sm text-center"></div>
 
@@ -216,12 +227,24 @@ import Button from '../components/ui/Button.astro';
             btn.disabled = true;
             btn.textContent = 'Sending...';
 
+            // Check Altcha is verified
+            const altchaEl = form.querySelector('altcha-widget');
+            const altchaPayload = altchaEl?.value || '';
+            if (!altchaPayload) {
+              errEl.textContent = 'Please wait for the security check to complete.';
+              errEl.classList.remove('hidden');
+              btn.disabled = false;
+              btn.textContent = 'Send Message';
+              return;
+            }
+
             const data = {
               firstName: form.firstName.value.trim(),
               lastName: form.lastName.value.trim(),
               email: form.email.value.trim(),
               phone: form.phone.value.trim(),
               message: form.message.value.trim(),
+              altcha: altchaPayload,
             };
 
             try {

@@ -44,6 +44,54 @@ if (!$input) {
     exit(json_encode(['error' => 'Invalid request']));
 }
 
+// ── Altcha verification ──
+define('ALTCHA_HMAC_KEY', '08c3e6b6326436554bbfbb1301d30359d84f43f1d351e7a941b197081fc08fd0');
+
+function altcha_verify($payload) {
+    if (empty($payload)) return false;
+
+    // Payload is base64-encoded JSON
+    $decoded = base64_decode($payload, true);
+    if (!$decoded) return false;
+
+    $data = json_decode($decoded, true);
+    if (!$data) return false;
+
+    $algorithm = $data['algorithm'] ?? '';
+    $challenge  = $data['challenge'] ?? '';
+    $number     = $data['number']    ?? null;
+    $salt       = $data['salt']      ?? '';
+    $signature  = $data['signature'] ?? '';
+
+    if ($algorithm !== 'SHA-256' || !$challenge || $number === null || !$salt || !$signature) {
+        return false;
+    }
+
+    // Check expiry if present in salt params
+    $query = parse_url($salt, PHP_URL_QUERY) ?? '';
+    parse_str($query, $saltParams);
+    if (!empty($saltParams['expires']) && (int)$saltParams['expires'] < time()) {
+        return false; // expired
+    }
+
+    // Verify the challenge hash
+    $expectedChallenge = hash('sha256', $salt . $number);
+    if (!hash_equals($challenge, $expectedChallenge)) return false;
+
+    // Verify the HMAC signature
+    $expectedSignature = hash_hmac('sha256', $challenge, ALTCHA_HMAC_KEY);
+    if (!hash_equals($signature, $expectedSignature)) return false;
+
+    return true;
+}
+
+$altchaPayload = trim($input['altcha'] ?? '');
+if (!altcha_verify($altchaPayload)) {
+    http_response_code(400);
+    exit(json_encode(['error' => 'CAPTCHA verification failed. Please try again.']));
+}
+// ── End Altcha ──
+
 // Accept firstName/lastName directly, or split a combined name field
 $firstName = trim($input['firstName'] ?? '');
 $lastName  = trim($input['lastName']  ?? '');

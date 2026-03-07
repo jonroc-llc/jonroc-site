@@ -22,9 +22,9 @@ TIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')
 
 echo "[$TIMESTAMP] Starting push to production..." | tee -a "$LOG_FILE"
 
-# Verify production dir exists
-if [ ! -d "$PRODUCTION_DIR" ]; then
-  echo "[$TIMESTAMP] ERROR: Production directory not found: $PRODUCTION_DIR" | tee -a "$LOG_FILE"
+# Verify SSH access to production
+if ! ssh -i "$DEPLOY_KEY" -o StrictHostKeyChecking=no jonroc6@localhost "test -d /home/jonroc6/public_html" 2>/dev/null; then
+  echo "[$TIMESTAMP] ERROR: Cannot reach production directory via SSH. Check deploy key authorization." | tee -a "$LOG_FILE"
   exit 1
 fi
 

@@ -12,7 +12,8 @@ set -e
 
 # ── CONFIG ──────────────────────────────────────────────────
 STAGING_DIR="/home/jonrocd26/public_html"
-PRODUCTION_DIR="/home/jonrocd26/public_html_jonroc"   # ← UPDATE THIS PATH
+PRODUCTION_DIR="jonroc6@localhost:/home/jonroc6/public_html"
+DEPLOY_KEY="/home/jonrocd26/.ssh/deploy_key"
 LOG_FILE="/home/jonrocd26/logs/deploy-production.log"
 # ────────────────────────────────────────────────────────────
 
@@ -29,8 +30,10 @@ fi
 
 # Sync staging → production
 rsync -az --delete \
+  -e "ssh -i $DEPLOY_KEY -o StrictHostKeyChecking=no -p 22" \
   --exclude 'cgi-bin' \
   --exclude '.htaccess.bak' \
+  --exclude 'Outside_Content' \
   "$STAGING_DIR/" \
   "$PRODUCTION_DIR/"
 

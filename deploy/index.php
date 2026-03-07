@@ -20,10 +20,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
     if (!hash_equals(DEPLOY_TOKEN, $_POST['token'])) {
         $error = 'Invalid token.';
     } elseif (isset($_POST['action']) && $_POST['action'] === 'deploy') {
-        // Run the deploy script
-        $cmd    = 'bash ' . escapeshellarg(DEPLOY_SCRIPT) . ' 2>&1';
-        $output = shell_exec($cmd);
-        if (strpos($output, '✅') !== false) {
+        // Run the deploy script via proc_open
+        $cmd         = 'bash ' . escapeshellarg(DEPLOY_SCRIPT) . ' 2>&1';
+        $descriptors = [0 => ['pipe','r'], 1 => ['pipe','w'], 2 => ['pipe','w']];
+        $process     = proc_open($cmd, $descriptors, $pipes);
+        if (is_resource($process)) {
+            fclose($pipes[0]);
+            $output   = stream_get_contents($pipes[1]);
+            $output  .= stream_get_contents($pipes[2]);
+            fclose($pipes[1]);
+            fclose($pipes[2]);
+            $exitCode = proc_close($process);
+        } else {
+            $output   = '';
+            $exitCode = 1;
+        }
+        if ($exitCode === 0 && strpos($output, '✅') !== false) {
             $success = 'Push complete — jonroc.com is now live with the latest build.';
         } else {
             $error = 'Deploy script encountered an issue. Check output below.';

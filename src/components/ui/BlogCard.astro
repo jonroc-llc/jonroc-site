@@ -53,10 +53,10 @@ function formatDate(dateStr: string) {
       <a
         href={`/blog/${slug}`}
         class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C9A84C] hover:text-[#E2C070] transition-colors duration-200"
-        aria-label={`Read ${title}`}
       >
         Read More
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <span class="sr-only">about {title}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </a>

@@ -38,4 +38,8 @@ rsync -az --delete \
   "$STAGING_DIR/" \
   "$PRODUCTION_DIR/"
 
+# Fix permissions — suPHP rejects PHP in group-writable dirs/files
+find /home/jonroc6/public_html -type d | xargs chmod 755
+find /home/jonroc6/public_html -type f | xargs chmod 644
+
 echo "[$TIMESTAMP] ✅ Push complete. jonroc.com is now up to date." | tee -a "$LOG_FILE"

@@ -85,21 +85,46 @@ import Button from './ui/Button.astro';
     </div>
   </div>
 
-  <!-- Video placeholder -->
+  <!-- Video section -->
   <div class="relative max-w-4xl w-full mx-auto mt-20">
+
+    <!-- Poster / click-to-load state (shown until user clicks play) -->
     <div
-      class="w-full aspect-video rounded-2xl border border-white/10 bg-[#111111] flex flex-col items-center justify-center gap-3"
-      role="img"
-      aria-label="Video placeholder: overview video coming soon"
+      id="video-poster"
+      class="w-full aspect-video rounded-2xl border border-white/10 bg-[#111111] flex flex-col items-center justify-center gap-4 cursor-pointer group overflow-hidden relative"
+      role="button"
+      tabindex="0"
+      aria-label="Play founder intro video"
     >
-      <!-- Play icon -->
-      <div class="w-16 h-16 rounded-full border-2 border-[#C9A84C]/50 flex items-center justify-center">
-        <svg class="w-7 h-7 text-[#C9A84C] ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <!-- Dark gradient overlay on hover -->
+      <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 rounded-2xl" aria-hidden="true"></div>
+
+      <!-- Play button -->
+      <div class="relative w-20 h-20 rounded-full border-2 border-[#C9A84C]/60 bg-[#C9A84C]/10 flex items-center justify-center group-hover:border-[#C9A84C] group-hover:bg-[#C9A84C]/20 group-hover:scale-110 transition-all duration-300">
+        <svg class="w-8 h-8 text-[#C9A84C] ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8 5v14l11-7z" />
         </svg>
       </div>
-      <p class="text-[#9CA3AF] text-sm">Overview video: coming soon</p>
+
+      <div class="relative text-center">
+        <p class="text-[#F0F0F0] font-semibold text-base">Watch the Overview</p>
+        <p class="text-[#9CA3AF] text-sm mt-1">AI Co-Partner for Business Operations</p>
+      </div>
     </div>
+
+    <!-- Video element (hidden until play is clicked) -->
+    <video
+      id="hero-video"
+      class="hidden w-full aspect-video rounded-2xl border border-white/10 bg-[#0A0A0A]"
+      controls
+      playsinline
+      preload="none"
+      aria-label="Founder intro: AI Co-Partner for Business Operations"
+    >
+      <source data-src="/videos/founder-intro.mp4" type="video/mp4" />
+      Your browser does not support the video element.
+    </video>
+
     <!-- Subtle glow under video -->
     <div
       class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-8 blur-2xl opacity-30 pointer-events-none"
@@ -107,4 +132,36 @@ import Button from './ui/Button.astro';
       aria-hidden="true"
     ></div>
   </div>
+
+  <script>
+    const poster = document.getElementById('video-poster');
+    const video  = document.getElementById('hero-video') as HTMLVideoElement | null;
+
+    function activateVideo() {
+      if (!poster || !video) return;
+
+      // Swap src into the <source> so the browser starts fetching only now
+      const source = video.querySelector('source[data-src]') as HTMLSourceElement | null;
+      if (source && source.dataset.src) {
+        source.src = source.dataset.src;
+        delete source.dataset.src;
+        video.load();
+      }
+
+      // Show video, hide poster
+      poster.classList.add('hidden');
+      video.classList.remove('hidden');
+      video.play().catch(() => {
+        // Autoplay blocked — video is visible with controls, user can play manually
+      });
+    }
+
+    poster?.addEventListener('click', activateVideo);
+    poster?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activateVideo();
+      }
+    });
+  </script>
 </section>

@@ -1,3 +1,10 @@
+# ── Basic Auth (staging protection) ──
+AuthType Basic
+AuthName "Jonroc Staging"
+AuthUserFile /home/jonrocd26/.htpasswd
+Require valid-user
+# ─────────────────────────────────────
+
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the "ea-php81" package as the default "PHP" programming language.
 <IfModule mime_module>

@@ -7,7 +7,7 @@
 // ============================================================
 
 define('DEPLOY_TOKEN', 'ffc41183fe983badcc1ac89b07779f8377640291419801ac');
-define('DEPLOY_SCRIPT', __DIR__ . '/push-to-production.sh');
+define('DEPLOY_SCRIPT', '/home/jonrocd26/deploy/push-to-production.sh');
 
 session_start();
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
         // Run the deploy script
         $cmd    = 'bash ' . escapeshellarg(DEPLOY_SCRIPT) . ' 2>&1';
         $output = shell_exec($cmd);
-        if (str_contains($output, '✅')) {
+        if (strpos($output, '✅') !== false) {
             $success = 'Push complete — jonroc.com is now live with the latest build.';
         } else {
             $error = 'Deploy script encountered an issue. Check output below.';

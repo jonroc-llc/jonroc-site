@@ -32,6 +32,7 @@ fi
 rsync -az --delete \
   -e "ssh -i $DEPLOY_KEY -o StrictHostKeyChecking=no -p 22" \
   --exclude 'cgi-bin' \
+  --exclude '.htaccess' \
   --exclude '.htaccess.bak' \
   --exclude 'Outside_Content' \
   --exclude 'deploy' \

@@ -192,6 +192,14 @@ import Button from '../components/ui/Button.astro';
             ></textarea>
           </div>
 
+          <!-- Honeypot — hidden from humans, filled by bots -->
+          <div style="display:none" aria-hidden="true">
+            <input type="text" name="website" id="contact-website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <!-- Form load timestamp for min-time check -->
+          <input type="hidden" name="form_timestamp" id="contact-form-timestamp" />
+
           <!-- Altcha widget -->
           <div>
             <altcha-widget
@@ -220,6 +228,11 @@ import Button from '../components/ui/Button.astro';
         </form>
 
         <script>
+          // ── Set form load timestamp ──────────────────────────
+          const tsField = document.getElementById('contact-form-timestamp');
+          if (tsField) tsField.value = new Date().toISOString();
+          // ─────────────────────────────────────────────────────
+
           // ── Phone formatter ──────────────────────────────────
           const phoneInput = document.getElementById('contact-phone');
           phoneInput.addEventListener('input', (e) => {
@@ -262,6 +275,8 @@ import Button from '../components/ui/Button.astro';
               phone: form.phone.value.replace(/\D/g, ''),
               message: form.message.value.trim(),
               altcha: altchaPayload,
+              website: (form.elements['website']?.value || ''),
+              form_timestamp: (form.elements['form_timestamp']?.value || ''),
             };
 
             try {

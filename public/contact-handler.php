@@ -92,6 +92,50 @@ if (!altcha_verify($altchaPayload)) {
 }
 // ── End Altcha ──
 
+// ── Honeypot — bots fill hidden fields, humans don't ──
+$honeypot = trim($input['website'] ?? '');
+if ($honeypot !== '') {
+    // Silently accept so bots don't know they were blocked
+    http_response_code(200);
+    exit(json_encode(['success' => true]));
+}
+
+// ── Minimum time check — reject submissions faster than 3 seconds ──
+$formTimestamp = trim($input['form_timestamp'] ?? '');
+if ($formTimestamp) {
+    $submitted = strtotime($formTimestamp);
+    if ($submitted && (time() - $submitted) < 3) {
+        http_response_code(400);
+        exit(json_encode(['error' => 'Please take a moment to fill out the form completely.']));
+    }
+}
+
+// ── Rate limiting — max 3 submissions per IP per hour ──
+$ip        = $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$ip        = preg_replace('/[^a-f0-9:.]/i', '', explode(',', $ip)[0]); // sanitize
+$rateDir   = '/tmp/jonroc_ratelimit';
+$rateFile  = $rateDir . '/' . md5($ip) . '.json';
+$rateLimit = 3;
+$rateWindow = 3600; // 1 hour
+
+if (!is_dir($rateDir)) mkdir($rateDir, 0700, true);
+
+$now        = time();
+$timestamps = [];
+if (file_exists($rateFile)) {
+    $timestamps = json_decode(file_get_contents($rateFile), true) ?? [];
+}
+// Keep only timestamps within the last hour
+$timestamps = array_values(array_filter($timestamps, fn($t) => ($now - $t) < $rateWindow));
+
+if (count($timestamps) >= $rateLimit) {
+    http_response_code(429);
+    exit(json_encode(['error' => 'Too many submissions. Please try again in an hour or email ben@jonroc.com directly.']));
+}
+
+$timestamps[] = $now;
+file_put_contents($rateFile, json_encode($timestamps), LOCK_EX);
+
 // Accept firstName/lastName directly, or split a combined name field
 $firstName = trim($input['firstName'] ?? '');
 $lastName  = trim($input['lastName']  ?? '');

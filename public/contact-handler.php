@@ -6,7 +6,7 @@
 
 // ── Config ──────────────────────────────────────────────────
 define('TO_EMAIL',        'benjamin@jonroc.com');
-define('FROM_DOMAIN',     'jonroc.com');
+define('FROM_EMAIL', 'contact@jonroc.com');
 define('ALTCHA_HMAC_KEY', '08c3e6b6326436554bbfbb1301d30359d84f43f1d351e7a941b197081fc08fd0');
 
 // ── CORS ─────────────────────────────────────────────────────
@@ -187,14 +187,13 @@ $html = <<<HTML
 </html>
 HTML;
 
-$fromEmail = 'noreply@' . FROM_DOMAIN;
+$fromEmail = FROM_EMAIL;
 $headers   = implode("\r\n", [
     'MIME-Version: 1.0',
     'Content-Type: text/html; charset=UTF-8',
-    "From: Jonroc Website <{$fromEmail}>",
+    "From: Jonroc Contact <{$fromEmail}>",
     "Reply-To: {$firstName} {$lastName} <{$email}>",
     'X-Mailer: PHP/' . PHP_VERSION,
-    'X-Priority: 1',
 ]);
 
 $sent = mail(TO_EMAIL, $subject, $html, $headers);

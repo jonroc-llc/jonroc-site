@@ -192,6 +192,19 @@ import Button from '../components/ui/Button.astro';
             ></textarea>
           </div>
 
+          <!-- Honeypot: hidden from real users, filled in by bots -->
+          <div style="display:none !important;" aria-hidden="true">
+            <label for="website_url">Leave this blank</label>
+            <input
+              type="text"
+              id="website_url"
+              name="website_url"
+              value=""
+              tabindex="-1"
+              autocomplete="off"
+            />
+          </div>
+
           <!-- Altcha widget -->
           <div>
             <altcha-widget
@@ -262,6 +275,7 @@ import Button from '../components/ui/Button.astro';
               phone: form.phone.value.replace(/\D/g, ''),
               message: form.message.value.trim(),
               altcha: altchaPayload,
+              website_url: (form.elements['website_url']?.value || ''), // honeypot
             };
 
             try {
